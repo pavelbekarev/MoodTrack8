@@ -1,6 +1,29 @@
 @font-face {
-    font-family: 'Zametka_Parletter';
-    src: url('./fonts/Zametka_Parletter.ttf') format("woff2");
+    font-family: 'Poppins-Medium';
+    src: url('./fonts/Poppins-Medium.ttf') format("woff2");
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('./fonts/Poppins-Regular.ttf') format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('./fonts/Lato-Regular.ttf') format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('./fonts/Lato-Bold.ttf') format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('./fonts/Lato-Black.ttf') format("woff2");
+    font-weight: normal;
+}
