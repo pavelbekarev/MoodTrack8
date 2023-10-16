@@ -1,14 +1,50 @@
-import React from "react";
-import { Group, Panel, PanelHeader, Text, Paragraph, PanelHeaderBack } from "@vkontakte/vkui";
-import { Icon20FilterOutline } from '@vkontakte/icons';
-import "./MainPage.css";
+import React, { useState } from "react";
+import { 
+    Panel, 
+    PanelHeader, 
+    Div, 
+    Title, 
+    Button, 
+    PanelHeaderButton, 
+    Calendar, 
+    PanelHeaderBack, 
+    Text,
+    Group,
+    FormLayout,
+    FormLayoutGroup,
+    FormItem,
+    LocaleProvider
+} from "@vkontakte/vkui";
 
-export const MainPage = (props) => (
-    <Panel id={props.id}>
-        <PanelHeader before={<Icon20FilterOutline width={28} height={28} />} separator={false} className="mainpage__panelheader">MoodTrack</PanelHeader>
-        <Group mode="plain" className="mainpage__content">
-            <Text>Доброе утро!</Text>
-            <Paragraph>Календарь на октябрь</Paragraph>
-        </Group>
-    </Panel>
-);
+import { Icon20FilterOutline } from '@vkontakte/icons';
+import "../css/MainPage.css";
+
+
+const MainPage = (props) => {
+    return (
+        <Panel className="panel" id={props.id}>
+            <Div className="panelheader__parent">
+                <PanelHeader className="panelheader" before={<PanelHeaderButton className="left"><Icon20FilterOutline className="logo"/></PanelHeaderButton>}>
+                    <Text className="panelheader__text">MoodTrack</Text>
+                </PanelHeader>
+            </Div>
+            
+            <Div className="calendar__wrapper">
+                <FormLayout>
+                    <FormLayoutGroup>
+                        <FormItem>
+                            <LocaleProvider className="calendar__wrapper">
+                                <Calendar className="calendar"></Calendar>
+                            </LocaleProvider>
+                        </FormItem>
+                    </FormLayoutGroup>
+                </FormLayout>
+            </Div>
+            
+        </Panel>
+    );
+    
+    
+};
+
+export default MainPage;

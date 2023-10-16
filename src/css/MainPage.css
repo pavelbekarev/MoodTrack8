@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../fonts/Poppins-Regular.ttf') format("woff2");
+    font-weight: normal;
+}
+
+.panel {
+    margin: 0; padding: 0; box-sizing: border-box;
+    border-radius: 14px;
+    background: #FEFEFF;
+}
+
+.panelheader__parent {
+    display: flex;
+    flex-direction: column;
+}
+
+.panelheader {
+    display: flex;
+    flex-direction: column;
+    height: 52px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.panelheader__button {
+    display: flex;
+    width: 48px;
+    height: 44px;
+    padding: 8px 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;    
+}
+
+.left {
+    display: flex;
+    width: 48px;
+    height: 44px;
+    padding: 8px 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.middle {
+    display: flex;
+    width: 175px;
+    height: 44px;
+    padding: 9px 30px 11px 29px;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
+
+.middle__layout {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.panelheader__text {
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Regular";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.38px;
+    background: linear-gradient(90deg, #79AADA -9.05%, #C3F29C 119.83%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.right {
+    display: flex;
+    width: 96px;
+    height: 44px;
+    padding: 6px 4px;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+}
+
+.calendar__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    width: 363px;
+    height: 366px;
+    padding: 4px;
+    margin: 150px 6px 296px 6px;
+    border-radius: 20px;
+    background: #79AADA;
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,14 @@
+.panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 375px;
+    height: 667px;
+    background: #FEFEFF;
+}
+
+.logo {
+    width: 130px;
+    height: 128px;
+    flex-shrink: 0;
+}
