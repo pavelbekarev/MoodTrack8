@@ -24,12 +24,12 @@ import Icon48CameraOnGridOutline from "./components/Icon48CameraOnGridOutline";
 
 import "./css/MainPage.css";
 import "./css/LoadPage.css";
-import { Icon16MenuOutline } from '@vkontakte/icons';
+import { Icon16MenuOutline, Icon28User } from '@vkontakte/icons';
 
 const App = () => {
 	const [fetchedUser, setUser] = useState(null);
-	const [activeView, setActiveView] = useState("loading-view");
-	const [activePanel, setActivePanel] = useState("loadpage");
+	const [activeView, setActiveView] = useState("app-view");
+	const [activePanel, setActivePanel] = useState("mainpage");
 	const [activeStory, setActiveStory] = useState("");
 
 	useEffect(() => {
@@ -44,15 +44,14 @@ const App = () => {
 		setActivePanel(e.currentTarget.dataset.to);
 	};
 
-	if (activeView == "loading-view") {
-		useEffect(() => {
-			setTimeout(() => {
-				setActiveView("app-view")
-			}, 2000);
-		}, [])
-	}
-	
-	
+	// if (activeView == "loading-view") {
+	// 	useEffect(() => {
+	// 		setTimeout(() => {
+	// 			setActiveView("app-view")
+	// 		}, 2000);
+	// 	}, [])
+	// }
+
 	return (
 		<ConfigProvider webviewType="vkapps">
 			<AdaptivityProvider>
@@ -68,7 +67,7 @@ const App = () => {
 										<Icon48CameraOnGridOutline />
 									</TabbarItem>
 									<TabbarItem>
-										<Icon16MenuOutline />
+										<Icon28User />
 									</TabbarItem>
 								</Tabbar>
 							}>
@@ -78,7 +77,16 @@ const App = () => {
 								<View id="app-view" activePanel={activePanel}>
 									<MainPage id="mainpage" />
 								</View>
-								
+								{/* <Root activeView={activeView}>
+									<View id="loading-view" activePanel={activePanel}>
+										<LoadPage id="loadpage"/>
+									</View>
+								</Root>
+								<Root activeView={activeView}>
+									<View id="app-view" activePanel={activePanel}>
+										<MainPage id="mainpage"/>
+									</View>
+								</Root> */}
 							</Epic>
 						</SplitCol>
 					</SplitLayout>
