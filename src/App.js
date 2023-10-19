@@ -8,29 +8,28 @@ import {
 	ConfigProvider, 
 	SplitLayout, 
 	SplitCol, 
-	Root,
-	Epic, 
-	Tabbar,
-	TabbarItem
+	Epic
 } from '@vkontakte/vkui';
 
 import '@vkontakte/vkui/dist/vkui.css';
+import { useActiveVkuiLocation, useGetPanelForView } from '@vkontakte/vk-mini-apps-router';
 
-import Home from './panels/Home';
-import Persik from './panels/Persik';
-import { LoadPage } from './panels/LoadPage';
 import MainPage from "./panels/MainPage";
-import Icon48CameraOnGridOutline from "./components/Icon48CameraOnGridOutline";
+import MainTabbar from './components/MainTabbar';
+import ProfilePage from './panels/ProfilePage';
 
 import "./css/MainPage.css";
 import "./css/LoadPage.css";
-import { Icon16MenuOutline, Icon28User } from '@vkontakte/icons';
+
+
 
 const App = () => {
 	const [fetchedUser, setUser] = useState(null);
-	const [activeView, setActiveView] = useState("app-view");
-	const [activePanel, setActivePanel] = useState("mainpage");
+	// const [activeView, setActiveView] = useState("loading-view");
+	// const [activePanel, setActivePanel] = useState("loadpage");
 	const [activeStory, setActiveStory] = useState("");
+	const { view: activeView } = useActiveVkuiLocation();
+	const activePanel = useGetPanelForView("default_view");
 
 	useEffect(() => {
 		async function fetchData() {
@@ -40,53 +39,26 @@ const App = () => {
 		fetchData();
 	}, []);
 
-	const go = e => {
-		setActivePanel(e.currentTarget.dataset.to);
-	};
-
-	// if (activeView == "loading-view") {
-	// 	useEffect(() => {
-	// 		setTimeout(() => {
-	// 			setActiveView("app-view")
-	// 		}, 2000);
-	// 	}, [])
-	// }
-
 	return (
 		<ConfigProvider webviewType="vkapps">
 			<AdaptivityProvider>
 				<AppRoot>
 					<SplitLayout>
 						<SplitCol>
-							<Epic activeStory={activeView} tabbar={
-								<Tabbar>
-									<TabbarItem>
-										<Icon16MenuOutline />
-									</TabbarItem>
-									<TabbarItem>
-										<Icon48CameraOnGridOutline />
-									</TabbarItem>
-									<TabbarItem>
-										<Icon28User />
-									</TabbarItem>
-								</Tabbar>
-							}>
-								<View id="loading-view" activePanel="loadpage">
-									<LoadPage id="loadpage"/>
+							{/* Сделано:
+									1.  TabbarBar - без навигации и функционала.
+									2. Добавлены иконки для TabbarItem.
+
+								Сделать:
+									1. Навигацию между TabbarItem.
+									2. Убрать Tabbar на загрузочном экране ("Лого").
+							*/}
+							
+							<Epic activeStory={activeView} tabbar={<MainTabbar />}>
+								<View nav={activeView} activePanel={activePanel}>
+									<MainPage nav="home_panel" />
+									<ProfilePage nav="profile_panel" />
 								</View>
-								<View id="app-view" activePanel={activePanel}>
-									<MainPage id="mainpage" />
-								</View>
-								{/* <Root activeView={activeView}>
-									<View id="loading-view" activePanel={activePanel}>
-										<LoadPage id="loadpage"/>
-									</View>
-								</Root>
-								<Root activeView={activeView}>
-									<View id="app-view" activePanel={activePanel}>
-										<MainPage id="mainpage"/>
-									</View>
-								</Root> */}
 							</Epic>
 						</SplitCol>
 					</SplitLayout>

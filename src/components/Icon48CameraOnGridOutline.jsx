@@ -1,10 +1,10 @@
 import React from "react"
 import calendar_tabbar_icon from "../img/calendar-tabbar-icon.svg";
 import { Image } from "@vkontakte/vkui";
-import "../css/Calendar_Tabbar_Icon.css";
+import calendar48 from "../img/calendar48.svg"
 
-export default function Icon48CameraOnGridOutline() {
+export default function Icon48CameraOnGridOutline({color}) {
     return (
-        <Image className="calendar_tabbar_icon" src={calendar_tabbar_icon}></Image>
+        <img src={calendar48}></img>
     );
 };

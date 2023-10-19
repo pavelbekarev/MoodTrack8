@@ -16,9 +16,9 @@ import smile from "../img/smile.svg"
 import smile1 from "../img/smile1.svg"
 import colorfull_logo from "../img/colorfull-logo.svg"
 
+
 export const LoadPage = (props) => (
     <Panel className="panel" centered id={props.id}>
-        <PanelHeader separator={false}></PanelHeader>
         <img className="logo" src={logo}></img>
     </Panel>
 );

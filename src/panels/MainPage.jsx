@@ -18,17 +18,13 @@ import {
 
 import { Icon20FilterOutline } from '@vkontakte/icons';
 import "../css/MainPage.css";
+import HeaderPanel from "../components/HeaderPanel";
 
 
-const MainPage = (props) => {
+const MainPage = () => {
     return (
-        <Panel className="panel" id={props.id}>
-            <Div className="panelheader__parent">
-                <PanelHeader className="panelheader" before={<PanelHeaderButton className="left"><Icon20FilterOutline className="logo"/></PanelHeaderButton>}>
-                    <Text className="panelheader__text">MoodTrack</Text>
-                </PanelHeader>
-            </Div>
-            
+        <Panel className="panel">
+            <HeaderPanel />
             <Div className="calendar__wrapper">
                 <FormLayout>
                     <FormLayoutGroup>

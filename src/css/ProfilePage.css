@@ -1,0 +1,20 @@
+.profile_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 360px;
+    height: 216px;
+    border-top: 1px solid var(--light-separator-common, #D7D8D9);
+}
+
+.panel2 {
+    display: flex;
+    width: 375px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_avatar {
+    margin: 0;padding: 0;
+}
