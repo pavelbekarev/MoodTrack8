@@ -14,9 +14,10 @@ import {
 import '@vkontakte/vkui/dist/vkui.css';
 import { useActiveVkuiLocation, useGetPanelForView } from '@vkontakte/vk-mini-apps-router';
 
-import MainPage from "./panels/MainPage";
+import CalendarPage from "./panels/CalendarPage";
 import MainTabbar from './components/MainTabbar';
 import ProfilePage from './panels/ProfilePage';
+import EmotionPage from './panels/EmotionPage';
 
 import "./css/MainPage.css";
 import "./css/LoadPage.css";
@@ -48,15 +49,17 @@ const App = () => {
 							{/* Сделано:
 									1.  TabbarBar - без навигации и функционала.
 									2. Добавлены иконки для TabbarItem.
-
-								Сделать:
-									1. Навигацию между TabbarItem.
-									2. Убрать Tabbar на загрузочном экране ("Лого").
+									3. Добавлена проверка дня календаря.
+										Если сегодня -> пользователю предлагается выбрать эмоцию
+										Если не сегодня -> пользователю выводится сообщение о том, что 
+											выбранный день уже прошел / еще не наступил
+									4. Окно "Выбор дня" - закончено
+									5. Создана панель EmotionPage, на которой пользователь сможет выбрать эмоцию
 							*/}
 							
 							<Epic activeStory={activeView} tabbar={<MainTabbar />}>
 								<View nav={activeView} activePanel={activePanel}>
-									<MainPage nav="home_panel" />
+									<CalendarPage nav="home_panel" />
 									<ProfilePage nav="profile_panel" />
 								</View>
 							</Epic>

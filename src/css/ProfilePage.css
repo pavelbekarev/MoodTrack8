@@ -1,10 +1,17 @@
+.profile_list-parent {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    align-self: stretch;
+    width: 100%;
+    height: 216px;
+    margin-left: 16px;
+}
+
 .profile_list {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 360px;
-    height: 216px;
-    border-top: 1px solid var(--light-separator-common, #D7D8D9);
+    /* border-top: 1px solid var(--light-separator-common, #D7D8D9); */
 }
 
 .panel2 {
@@ -17,4 +24,10 @@
 
 .profile_avatar {
     margin: 0;padding: 0;
+}
+
+.profile_panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

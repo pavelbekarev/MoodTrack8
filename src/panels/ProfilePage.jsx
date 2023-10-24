@@ -10,10 +10,11 @@ import {
     Spacing,
     Avatar,
     Cell,
-    List
+    List,
+    Separator
 } from "@vkontakte/vkui";
 
-import { Icon16Poll, Icon20FilterOutline, Icon28PaletteOutline, Icon28SettingsOutline, Icon28UserOutline } from '@vkontakte/icons';
+import { Icon16Poll, Icon20FilterOutline, Icon28PaletteOutline, Icon28SettingsOutline, Icon28UserOutline, Icon24UserAdded } from '@vkontakte/icons';
 import "../css/MainPage.css";
 import { useEffect } from "react";
 import "../css/ProfilePage.css";
@@ -33,25 +34,30 @@ export default function ProfilePage() {
     }, []);
 
     return (
-        <Panel centered>
+        <Panel>
             <HeaderPanel />
             <Spacing size={80} />
-            {
-                fetchedUser 
-                ? 
-                <Avatar className="profile_avatar" src={fetchedUser.photo_200} size={96}/>
-                :
-                <Avatar className="profile_avatar" style={{backgroundColor: "rgba(121, 170, 218, 1)"}} size={96} />
-            }
+            <div className="profile_panel">
+                {
+                    fetchedUser 
+                    ? 
+                    <Avatar className="profile_avatar" src={fetchedUser.photo_200} size={96}/>
+                    :
+                    <Avatar className="profile_avatar" style={{backgroundColor: "rgba(121, 170, 218, 1)"}} size={96} />
+                }
+            </div>
             <Spacing size={80} />
-            <Group>
-                <Div className="profile_list">
-                    <Cell before={<Icon28UserOutline />} style={{width: "232"}}>Аккаунт</Cell>
+
+            <Separator />
+            <Spacing size={11.5} />
+            <div className="profile_list-parent">
+                <div className="profile_list">
                     <Cell before={<Icon28PaletteOutline />}>Внешний вид</Cell>
                     <Cell before={<Icon28SettingsOutline />}>Основные</Cell>
+                    <Cell before={<Icon24UserAdded width={32} height={32}/>}>Подписка</Cell>
                     <Cell before={<Icon16Poll style={{width: 34, height: 34}}/>}>Статистика</Cell>
-                </Div>
-            </Group>
+                </div>
+            </div>
         </Panel>
     );
 }

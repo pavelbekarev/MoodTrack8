@@ -13,12 +13,14 @@ export default function MainTabbar() {
             <TabbarItem
                 selected={activePanel === "menu_panel"}
                 onClick={() => routeNavigator.push('/menu')}
+                style={{fill: "red"}}
             >
-                <Icon28MenuOutline />
+                <Icon28MenuOutline style={{color: "white"}}/>
             </TabbarItem>
             <TabbarItem
                 selected={activePanel === "home_panel"}
                 onClick={() => routeNavigator.push('/')}
+                style={{fill: "red"}}
             >
                 <Icon48CameraOnGridOutline />
             </TabbarItem>
@@ -27,7 +29,7 @@ export default function MainTabbar() {
                 onClick={() => routeNavigator.push('/profile')}
                 className='tabItem'
             >
-                <Icon28User />
+                <Icon28User style={{color: "white"}}/>
             </TabbarItem>
         </Tabbar>
     );

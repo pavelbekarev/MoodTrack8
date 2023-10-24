@@ -4,6 +4,12 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format("woff2");
+    font-weight: normal;
+}
+
 .panel {
     margin: 0; padding: 0; box-sizing: border-box;
     border-radius: 14px;
@@ -15,14 +21,14 @@
     flex-direction: column;
 }
 
-.panelheader {
+/* .panelheader {
     display: flex;
     flex-direction: column;
     height: 52px;
     padding: 4px;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .group {
     display: flex;
@@ -31,7 +37,7 @@
     align-items: center;
 }
 
-.panelheader__button {
+/* .panelheader__button {
     display: flex;
     width: 48px;
     height: 44px;
@@ -39,7 +45,7 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;    
-}
+} */
 
 .left {
     display: flex;
@@ -109,14 +115,68 @@
     width: 363px;
     height: 366px;
     padding: 4px;
-    margin: 150px 6px 296px 6px;
+    margin: auto 6px;
     border-radius: 20px;
     background: #79AADA;
+}
 
-    font-size: 12px;
+.dayInfo-container {
+    width: 248px;
+    color: #79AADA;
+
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Regular";
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 12px;
-    letter-spacing: 0.36px;
-    text-transform: uppercase;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.38px;
+}
+
+.dayInfo-text {
+    width: 248px;
+    color: #79AADA;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Regular";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.38px;
+}
+
+.dayInfo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dayInfo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    min-width: 116px;
+    padding: 0px 20px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    border: none;
+    background: var(--light-button-muted-background, #F2F3F5);
+    margin-top: 30px;
+
+    color: #79AADA;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Roboto-Regular";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.2px;
+}
+
+.dayInfo-button:hover {
+    background: var(--light-button-muted-background, #dee4f1);
 }
