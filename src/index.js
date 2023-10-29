@@ -23,6 +23,16 @@ const router = createHashRouter([
     path: 'profile',
     panel: "profile_panel",
     view: "default_view",
+  },
+  {
+    path: 'calendar',
+    panel: "calendar_panel",
+    view: "default_view",
+  },
+  {
+    path: 'emotions',
+    panel: "emotions_panel",
+    view: "default_view",
   }
 ]);
 

@@ -11,31 +11,18 @@ import {
     Text,
     Button
 } from "@vkontakte/vkui";
-// import Calendar from "react-calendar";
-// import 'react-calendar/dist/Calendar.css';
 
-import { Icon20FilterOutline } from '@vkontakte/icons';
 import { Icon24ChevronCompactRight } from '@vkontakte/icons';
 import "../css/MainPage.css";
 import HeaderPanel from "../components/HeaderPanel";
 import "@vkontakte/vkui/dist/cssm/components/CalendarDay/CalendarDay";
-import { CalendarDay } from "@vkontakte/vkui/dist/components/CalendarDay/CalendarDay";
-import { CalendarDays } from "@vkontakte/vkui/dist/components/CalendarDays/CalendarDays";
+import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
 
 
 const CalendarPage = () => {
     const [dateValue, setDateValue] = useState(() => new Date()); // выбранная дата 
-    const [enableTime, setEnableTime] = useState(false);
-    const [disablePast, setDisablePast] = useState(false);
-    const [disableFuture, setDisableFuture] = useState(false);
-    const [disablePickers, setDisablePickers] = useState(false);
-    const [showNeighboringMonth, setShowNeighboringMonth] = useState(false);
-    const [locale, setLocale] = useState('ru');
-    const [size, setSize] = useState('m');
-    const [listenDayChangesForUpdate, setListenDayChangesForUpdate] = useState(true);
     const [currentDate, setCurrentDate] = useState(() => new Date());
-
-
+    const routeNavigator = useRouteNavigator();
 
     // vars of choosing dates
     let dateDay = dateValue.getDate();
@@ -50,7 +37,6 @@ const CalendarPage = () => {
     let lessDate = false;
     let moreDate = false;
     let isEven = false;
-
 
 
     useEffect(() => {
@@ -130,7 +116,7 @@ const CalendarPage = () => {
                                 && 
                                 <div className="dayInfo-container">
                                     <Text className="dayInfo-text">Сегодня {dateValue.toLocaleDateString()}, пора записать свои эмоции!</Text>
-                                    <button onClick={""} className="dayInfo-button">Продолжить <Icon24ChevronCompactRight style={{width: 16, height:24}}/></button>
+                                    <button onClick={() => {routeNavigator.push("/emotions")}} className="dayInfo-button">Продолжить <Icon24ChevronCompactRight style={{width: 16, height:24}}/></button>
                                 </div>
                             }
 
@@ -153,7 +139,6 @@ const CalendarPage = () => {
                     </FormLayoutGroup>
                 </FormLayout>
             </Div>
-
         </Panel>
     );
 }

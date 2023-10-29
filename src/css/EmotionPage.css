@@ -1,0 +1,167 @@
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../fonts/Poppins-Medium.ttf') format("woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Semibold';
+    src: url('../fonts/Poppins-SemiBold.ttf') format("woff2");
+    font-weight: normal;
+}
+
+.dateLayout_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.dateLayout {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+    height: 36px;
+    flex-shrink: 0;
+    gap: 28px;
+}
+
+.cellButton {
+    background: var(--light-button-muted-background, #F2F3F5);
+    color: rgba(121, 170, 218, 1);
+    border-radius: 8px;
+}
+
+.cellButtonIcon {
+    display: flex;
+    height: 36px;
+    padding: 0px 20px;
+}
+
+.textLayout {
+    min-width: 173px;
+    color: #79AADA;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.38px;
+}
+
+.text-chooseEmotion_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-chooseEmotion {
+    width: 279px;
+    color: #79AADA;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Medium";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.38px;
+}
+
+.emotions__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell {
+    display: flex;
+    flex-direction: column;
+}
+
+.emotionText20 {
+    width: 62px;
+    color: #FDCD71;
+    
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.emotionText24 {
+    width: 62px;
+    /* height: 20px; */
+    flex-shrink: 0;
+    color: #FD6B6B;
+    
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.emotionText21 {
+    width: 62px;
+    flex-shrink: 0;
+    color: #86C3FC;
+    
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Semibold";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.emotionText22 {
+    width: 62px;
+    flex-shrink: 1;
+    color: #D680F4;
+    
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Semibold";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.emotionText23 {
+    width: 62px;
+    flex-shrink: 0;
+    color: #6FE47B;
+    
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Poppins-Semibold";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.cell20 {
+    width: 62px;
+}
+/* 
+.cell23 {
+    width: 87px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */

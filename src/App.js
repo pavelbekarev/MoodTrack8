@@ -26,8 +26,6 @@ import "./css/LoadPage.css";
 
 const App = () => {
 	const [fetchedUser, setUser] = useState(null);
-	// const [activeView, setActiveView] = useState("loading-view");
-	// const [activePanel, setActivePanel] = useState("loadpage");
 	const [activeStory, setActiveStory] = useState("");
 	const { view: activeView } = useActiveVkuiLocation();
 	const activePanel = useGetPanelForView("default_view");
@@ -61,6 +59,7 @@ const App = () => {
 								<View nav={activeView} activePanel={activePanel}>
 									<CalendarPage nav="home_panel" />
 									<ProfilePage nav="profile_panel" />
+									<EmotionPage nav="emotions_panel"/>
 								</View>
 							</Epic>
 						</SplitCol>
