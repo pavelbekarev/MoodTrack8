@@ -116,7 +116,15 @@ const CalendarPage = () => {
                                 && 
                                 <div className="dayInfo-container">
                                     <Text className="dayInfo-text">Сегодня {dateValue.toLocaleDateString()}, пора записать свои эмоции!</Text>
-                                    <button onClick={() => {routeNavigator.push("/emotions")}} className="dayInfo-button">Продолжить <Icon24ChevronCompactRight style={{width: 16, height:24}}/></button>
+                                    <button 
+                                        onClick={() => {routeNavigator.push("/emotions")}} 
+                                        className="dayInfo-button"
+                                    >
+                                        Продолжить 
+                                        <Icon24ChevronCompactRight 
+                                            style={{width: 16, height:24}}
+                                        />
+                                    </button>
                                 </div>
                             }
 

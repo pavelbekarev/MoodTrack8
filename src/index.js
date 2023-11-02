@@ -33,7 +33,33 @@ const router = createHashRouter([
     path: 'emotions',
     panel: "emotions_panel",
     view: "default_view",
+  },
+  {
+    path: 'emotion_list:happy',
+    panel: "emotionHappy_panel",
+    view: "default_view",
+  },
+  {
+    path: 'emotion_list:anger',
+    panel: "emotionAnger_panel",
+    view: "default_view",
+  },
+  {
+    path: 'emotion_list:sadness',
+    panel: "emotionSadness_panel",
+    view: "default_view",
+  },
+  {
+    path: 'emotion_list:surprise',
+    panel: "emotionSurprise_panel",
+    view: "default_view",
+  },
+  {
+    path: 'emotion_list:dislike',
+    panel: "emotionDislike_panel",
+    view: "default_view",
   }
+
 ]);
 
 

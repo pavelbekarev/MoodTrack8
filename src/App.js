@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import bridge from '@vkontakte/vk-bridge';
 
 import { 
@@ -18,9 +18,15 @@ import CalendarPage from "./panels/CalendarPage";
 import MainTabbar from './components/MainTabbar';
 import ProfilePage from './panels/ProfilePage';
 import EmotionPage from './panels/EmotionPage';
+import EmotionList from './panels/EmotionList';
 
 import "./css/MainPage.css";
 import "./css/LoadPage.css";
+import EmotionHappy from './panels/EmotionList/EmotionHappy';
+import EmotionAnger from './panels/EmotionList/EmotionAnger';
+import EmotionSadness from './panels/EmotionList/EmotionSadness';
+import EmotionSurprise from './panels/EmotionList/EmotionSurprise';
+import EmotionDislike from './panels/EmotionList/EmotionDislike';
 
 
 
@@ -29,6 +35,34 @@ const App = () => {
 	const [activeStory, setActiveStory] = useState("");
 	const { view: activeView } = useActiveVkuiLocation();
 	const activePanel = useGetPanelForView("default_view");
+
+
+	const setCalendarDate = () => {
+		let currentDate = new Date();
+	
+
+		const month = {
+			1: "января",
+			2: "февраля",
+			3: "марта",
+			4: "апреля",
+			5: "мая",
+			6: "июня",
+			7: "июля",
+			8: "августа",
+			9: "сентября",
+			10: "октября",
+			11: "ноября",
+			12: "декабря"
+		}
+	
+		const [currentDay, setCurrentDay] = useState(currentDate.getDate());
+		const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
+		const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
+	
+		return currentDate;
+	}
+
 
 	useEffect(() => {
 		async function fetchData() {
@@ -59,7 +93,12 @@ const App = () => {
 								<View nav={activeView} activePanel={activePanel}>
 									<CalendarPage nav="home_panel" />
 									<ProfilePage nav="profile_panel" />
-									<EmotionPage nav="emotions_panel"/>
+									<EmotionPage setCalendarDate={setCalendarDate} nav="emotions_panel"/>
+									<EmotionHappy nav="emotionHappy_panel" />
+									<EmotionAnger nav="emotionAnger_panel" />
+									<EmotionSadness nav="emotionSadness_panel" />
+									<EmotionSurprise nav="emotionSurprise_panel" />
+									<EmotionDislike nav="emotionDislike_panel" />
 								</View>
 							</Epic>
 						</SplitCol>

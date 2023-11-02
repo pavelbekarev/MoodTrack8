@@ -78,10 +78,18 @@
 .cell {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell_img {
+    width: 51px;
+    height: 51px;
+    flex-shrink: 0;
 }
 
 .emotionText20 {
-    width: 62px;
+    /* width: 62px; */
     color: #FDCD71;
     
     text-align: center;
@@ -95,7 +103,7 @@
 }
 
 .emotionText24 {
-    width: 62px;
+    /* width: 62px; */
     /* height: 20px; */
     flex-shrink: 0;
     color: #FD6B6B;
@@ -111,8 +119,8 @@
 }
 
 .emotionText21 {
-    width: 62px;
-    flex-shrink: 0;
+    /* width: 62px;
+    flex-shrink: 0; */
     color: #86C3FC;
     
     text-align: center;
@@ -126,8 +134,8 @@
 }
 
 .emotionText22 {
-    width: 62px;
-    flex-shrink: 1;
+    /* width: 62px; */
+    /* flex-shrink: 1; */
     color: #D680F4;
     
     text-align: center;
@@ -140,9 +148,13 @@
     letter-spacing: 0.38px;
 }
 
+/* .emotionText22:active {
+    transform: scale(1.3);
+} */
+
 .emotionText23 {
-    width: 62px;
-    flex-shrink: 0;
+    /* width: 62px;
+    flex-shrink: 0; */
     color: #6FE47B;
     
     text-align: center;

@@ -8,7 +8,7 @@ export default function MainTabbar() {
     const routeNavigator = useRouteNavigator();
     const { panel: activePanel } = useActiveVkuiLocation();
 
-    return(
+    return (
         <Tabbar style={{backgroundColor: "#79AADA"}}>
             <TabbarItem
                 selected={activePanel === "menu_panel"}
