@@ -18,7 +18,6 @@ import CalendarPage from "./panels/CalendarPage";
 import MainTabbar from './components/MainTabbar';
 import ProfilePage from './panels/ProfilePage';
 import EmotionPage from './panels/EmotionPage';
-import EmotionList from './panels/EmotionList';
 
 import "./css/MainPage.css";
 import "./css/LoadPage.css";
@@ -27,6 +26,7 @@ import EmotionAnger from './panels/EmotionList/EmotionAnger';
 import EmotionSadness from './panels/EmotionList/EmotionSadness';
 import EmotionSurprise from './panels/EmotionList/EmotionSurprise';
 import EmotionDislike from './panels/EmotionList/EmotionDislike';
+import EmotionIntensivity from './panels/EmotionIntensivity';
 
 
 
@@ -40,7 +40,6 @@ const App = () => {
 	const setCalendarDate = () => {
 		let currentDate = new Date();
 	
-
 		const month = {
 			1: "января",
 			2: "февраля",
@@ -60,9 +59,10 @@ const App = () => {
 		const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
 		const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
 	
+		currentDate = `${currentDay} ${currentMonth}, ${currentYear}`
+
 		return currentDate;
 	}
-
 
 	useEffect(() => {
 		async function fetchData() {
@@ -93,12 +93,13 @@ const App = () => {
 								<View nav={activeView} activePanel={activePanel}>
 									<CalendarPage nav="home_panel" />
 									<ProfilePage nav="profile_panel" />
-									<EmotionPage setCalendarDate={setCalendarDate} nav="emotions_panel"/>
+									<EmotionPage nav="emotions_panel"/>
 									<EmotionHappy nav="emotionHappy_panel" />
 									<EmotionAnger nav="emotionAnger_panel" />
 									<EmotionSadness nav="emotionSadness_panel" />
 									<EmotionSurprise nav="emotionSurprise_panel" />
 									<EmotionDislike nav="emotionDislike_panel" />
+									<EmotionIntensivity nav="emotionIntensivity_panel" />
 								</View>
 							</Epic>
 						</SplitCol>

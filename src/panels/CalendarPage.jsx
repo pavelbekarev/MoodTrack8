@@ -97,7 +97,6 @@ const CalendarPage = () => {
         }
     }
 
-
     return (
         <Panel>
             <HeaderPanel />

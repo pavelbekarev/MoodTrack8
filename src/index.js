@@ -58,7 +58,14 @@ const router = createHashRouter([
     path: 'emotion_list:dislike',
     panel: "emotionDislike_panel",
     view: "default_view",
+  },
+  {
+    path: 'emotionIntensivity',
+    panel: "emotionIntensivity_panel",
+    view: "default_view",
   }
+
+  
 
 ]);
 

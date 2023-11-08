@@ -12,7 +12,7 @@ import { Icon24ChevronCompactRight } from "@vkontakte/icons";
 import React, {useState} from "react"
 import HeaderPanel from "../../components/HeaderPanel";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
-import "../../css/EmotionHappy.css";
+import "../../css/Emotions.css";
 
 const EmotionHappy = () => {
     const routeNavigator = useRouteNavigator();
@@ -60,7 +60,7 @@ const EmotionHappy = () => {
 
                     
                     <CellButton 
-                        onClick={() => routeNavigator.push("/")}
+                        onClick={() => routeNavigator.push("/emotionIntensivity")}
                         centered 
                         className="nextButton cellButton"
                     >

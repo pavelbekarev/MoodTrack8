@@ -14,21 +14,20 @@ import HeaderPanel from "../components/HeaderPanel";
 import "../css/EmotionPage.css"
 import { Icon24ChevronCompactRight } from '@vkontakte/icons';
 import { Icon24ChevronCompactLeft } from '@vkontakte/icons';
-import NavigationPanel from "../components/NavigationPanel";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
-
 
 import frame20 from "../img/Frame 20.svg";
 import frame21 from "../img/Frame 21.svg";
 import frame22 from "../img/Frame 22.svg";
 import frame23 from "../img/Frame 23.svg";
 import frame24 from "../img/Frame 24.svg";
+import GetDate from "../components/getCurrentDate";
 
 
-const EmotionPage = (setCalendarDate) => {
-    let currentDate = new Date();
+const EmotionPage = () => {
     const routeNavigator = useRouteNavigator();
     const [emotion_id, setEmotion_id] = useState("");
+    let currentDate = new Date();
 
     
     const month = {
@@ -46,6 +45,12 @@ const EmotionPage = (setCalendarDate) => {
         12: "декабря"
     }
 
+    const [currentDay, setCurrentDay] = useState(currentDate.getDate());
+    const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
+    const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
+
+    currentDate = `${currentDay} ${currentMonth}, ${currentYear}`
+
     const [frame20Flag, setFrame20Flag] = useState(false);
     const [frame21Flag, setFrame21Flag] = useState(false);
     const [frame22Flag, setFrame22Flag] = useState(false);
@@ -53,16 +58,11 @@ const EmotionPage = (setCalendarDate) => {
     const [frame24Flag, setFrame24Flag] = useState(false);
     const [isReactionSelected, setIsReactionSelected] = useState(false);
 
-    const [currentDay, setCurrentDay] = useState(currentDate.getDate());
-    const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
-    const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
-    
-    currentDate = `${currentDay} ${currentMonth}, ${currentYear}`
+
 
     function setEmotion() {
         
     }
-
 
     return (
         <Panel>
@@ -82,8 +82,6 @@ const EmotionPage = (setCalendarDate) => {
                     </CellButton>
 
                     <Text className="textLayout">{currentDate}</Text>
-
-                    
 
                     {/* Кнопка для перехода на след. страницу */}
                     {
