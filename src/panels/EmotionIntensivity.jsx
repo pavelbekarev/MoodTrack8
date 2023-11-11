@@ -5,17 +5,31 @@ import {
     CellButton,
     Text,
     Separator,
-    Spacing
+    Spacing,
+    Slider
 } from "@vkontakte/vkui";
 import { Icon24ChevronCompactLeft } from "@vkontakte/icons";
 import { Icon24ChevronCompactRight } from "@vkontakte/icons";
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import HeaderPanel from "../components/HeaderPanel";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import "../css/Emotions.css";
+import "../css/EmotionPage.css";
+
+import { useSelector } from "react-redux";
+import { useParams } from "@vkontakte/vk-mini-apps-router";
+import frame24 from "../img/Frame 24.svg";
+import frame20 from "../img/Frame 20.svg";
+import frame21 from "../img/Frame 21.svg";
+import frame22 from "../img/Frame 22.svg";
+import frame23 from "../img/Frame 23.svg";
+
 
 const EmotionIntensivity = () => {
     const routeNavigator = useRouteNavigator();
+    const params = useParams();
+    const [image, setImage] = useState();
+    const [valueStep, setValueStep] = useState(1);
 
     let currentDate = new Date();
 
@@ -38,7 +52,29 @@ const EmotionIntensivity = () => {
     const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
     const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
 
-    currentDate = `${currentDay} ${currentMonth}, ${currentYear}`
+    currentDate = `${currentDay} ${currentMonth}, ${currentYear}`;
+
+    useEffect(() => {
+        if (params.emotionType === ':anger'){
+            setImage(frame24)
+        }
+    
+        if (params.emotionType === ':happy'){
+            setImage(frame20)
+        }
+    
+        if (params.emotionType === ':dislike'){
+            setImage(frame23)
+        }
+    
+        if (params.emotionType === ':sadness'){
+            setImage(frame21)
+        }
+    
+        if (params.emotionType === ':surprise'){
+            setImage(frame22)
+        }
+    }, []);
 
     return (
         <Panel>
@@ -47,8 +83,8 @@ const EmotionIntensivity = () => {
                 <Div className="dateLayout">
                     <CellButton 
                         onClick={() => routeNavigator.back()} 
-                        centered 
-                        className="prevButton cellButton"
+                        centered
+                        className="cellButton"
                     >
                         <Icon24ChevronCompactLeft
                             className="cellButtonIcon" 
@@ -57,12 +93,11 @@ const EmotionIntensivity = () => {
                     </CellButton>
 
                     <Text className="textLayout">{currentDate}</Text>
-
                     
                     <CellButton 
                         onClick={() => routeNavigator.push("/")}
                         centered 
-                        className="nextButton cellButton"
+                        className="cellButton"
                     >
                         <Icon24ChevronCompactRight 
                             className="cellButtonIcon" 
@@ -73,10 +108,41 @@ const EmotionIntensivity = () => {
             </Group>
             <Separator />
 
-            <Text>Список выбранных эмоций на пред. экране</Text>
+            <Spacing size={20} />
 
-
+            <Div className="title_text">
+                <Text className="text">Насколько интенсивной была эта эмоция?</Text>
+            </Div>
             
+            <Spacing size={64} />
+
+            <Div className="set_intensivity_wrapper">
+                <Div className="emotion_image">
+                    <img 
+                        src={image} 
+                        alt=""
+                        style={{width: Number(valueStep*30)}}
+                    />
+                </Div>
+
+                <Spacing size={96} />
+
+                <Div className="slider_wrapper">
+                    <Slider
+                        step={1}
+                        min={1}
+                        max={5}
+                        value={Number(valueStep)}
+                        aria-labelledby="with-step"
+                        onChange={setValueStep}
+                    />
+                </Div>
+
+                <Spacing size={37} />
+                <Div className="button_wrapper">
+                    <CellButton className="goNext-button" centered>Продолжить</CellButton>
+                </Div>
+            </Div>
         </Panel>
     );
 }

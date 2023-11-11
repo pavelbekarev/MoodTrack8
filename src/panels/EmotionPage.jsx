@@ -21,8 +21,6 @@ import frame21 from "../img/Frame 21.svg";
 import frame22 from "../img/Frame 22.svg";
 import frame23 from "../img/Frame 23.svg";
 import frame24 from "../img/Frame 24.svg";
-import GetDate from "../components/getCurrentDate";
-
 
 const EmotionPage = () => {
     const routeNavigator = useRouteNavigator();
@@ -178,6 +176,17 @@ const EmotionPage = () => {
                         {frame23Flag && <span className="emotionText23">Неприязнь</span>}
                     </div>
                 </Cell>
+            </Div>
+
+            <Div
+                className="goNext_button_wrapper"
+            >
+                <CellButton
+                    className="goNext_button"
+                    centered
+                >
+                    Продолжить
+                </CellButton>
             </Div>
 
         </Panel>

@@ -60,7 +60,7 @@ const EmotionHappy = () => {
 
                     
                     <CellButton 
-                        onClick={() => routeNavigator.push("/emotionIntensivity")}
+                        onClick={() => routeNavigator.push("/emotionIntensivity/:happy")}
                         centered 
                         className="nextButton cellButton"
                     >

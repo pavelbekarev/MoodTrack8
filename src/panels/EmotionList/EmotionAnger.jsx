@@ -13,9 +13,11 @@ import React, {useState} from "react"
 import HeaderPanel from "../../components/HeaderPanel";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import "../../css/Emotions.css";
+import { useDispatch } from "react-redux";
 
 const EmotionHappy = () => {
     const routeNavigator = useRouteNavigator();
+    const dispatch = useDispatch();
 
     let currentDate = new Date();
 
@@ -57,10 +59,9 @@ const EmotionHappy = () => {
                     </CellButton>
 
                     <Text className="textLayout">{currentDate}</Text>
-
                     
                     <CellButton 
-                        onClick={() => routeNavigator.push("/emotionIntensivity")}
+                        onClick={() => routeNavigator.push(`/emotionIntensivity/:anger`)}
                         centered 
                         className="nextButton cellButton"
                     >
@@ -81,18 +82,64 @@ const EmotionHappy = () => {
 
             <Div className="list_wrapper">
                 <Div className="cellbuttons_row">
-                    <CellButton centered className="cellbutton_wrapper">
+                    <CellButton
+                        centered 
+                        className="cellbutton_wrapper"
+                        onClick={() => dispatch({type : "addEmotion", payload : "Гнев"})}
+                    >
                         Гнев
                     </CellButton>
-                    <CellButton centered className="cellbutton_wrapper">Боль</CellButton>
-                    <CellButton centered className="cellbutton_wrapper">Раздражение</CellButton>
-                    <CellButton centered className="cellbutton_wrapper">Агрессия</CellButton>
+                    <CellButton 
+                        centered 
+                        className="cellbutton_wrapper" 
+                        onClick={() => dispatch({type : "addEmotion", payload : "Боль"})}
+                    >
+                        Боль
+                    </CellButton>
+                    <CellButton 
+                        centered 
+                        className="cellbutton_wrapper" 
+                        onClick={() => dispatch({type : "addEmotion", payload : "Раздражение"})}
+                    >
+                        Раздражение
+                    </CellButton>
+                    <CellButton 
+                        centered 
+                        className="cellbutton_wrapper" 
+                        onClick={() => dispatch({type : "addEmotion", payload : "Агрессия"})}
+                    >
+                        Агрессия
+                    </CellButton>
                 </Div>
                 <Div className="cellbuttons_row">
-                    <CellButton centered className="cellbutton_wrapper">Презрение</CellButton>
-                    <CellButton centered className="cellbutton_wrapper">Свирепость</CellButton>
-                    <CellButton centered className="cellbutton_wrapper">Ненависть</CellButton>
-                    <CellButton centered className="cellbutton_wrapper">Враждебность</CellButton>
+                <CellButton 
+                        centered 
+                        className="cellbutton_wrapper" 
+                        onClick={() => dispatch({type : "addEmotion", payload : "Презрение"})}
+                    >
+                        Презрение
+                    </CellButton>
+                    <CellButton 
+                        centered 
+                        className="cellbutton_wrapper" 
+                        onClick={() => dispatch({type : "addEmotion", payload : "Свирепость"})}
+                    >
+                        Свирепость
+                    </CellButton>
+                    <CellButton 
+                        centered 
+                        className="cellbutton_wrapper" 
+                        onClick={() => dispatch({type : "addEmotion", payload : "Ненависть"})}
+                    >
+                        Ненависть
+                    </CellButton>
+                    <CellButton 
+                        centered 
+                        className="cellbutton_wrapper" 
+                        onClick={() => dispatch({type : "addEmotion", payload : "Враждебность"})}
+                    >
+                        Враждебность
+                    </CellButton>
                 </Div>
             </Div>
 

@@ -50,3 +50,41 @@
     background: var(--light-button-secondary-background, rgba(0, 28, 61, 0.05));
 }
 
+.set_intensivity_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.slider_wrapper {
+    height: 11.989px;
+    width: 357.088px;
+    flex-shrink: 0;
+    fill: #FFF;
+    stroke-width: 1px;
+    stroke: #79AADA;
+}
+
+.emotion_image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.goNext-button {
+    width: 156px;
+    height: 36px;
+    margin: 0 auto;
+
+}
+
+.button_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

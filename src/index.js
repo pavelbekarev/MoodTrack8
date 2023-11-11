@@ -9,6 +9,8 @@ import {
   ConfigProvider, 
   AppRoot
 } from '@vkontakte/vkui';
+import { Provider } from "react-redux";
+import { store } from "./store/index";
 
 // Init VK Mini App
 bridge.send("VKWebAppInit");
@@ -60,7 +62,7 @@ const router = createHashRouter([
     view: "default_view",
   },
   {
-    path: 'emotionIntensivity',
+    path: 'emotionIntensivity/:emotionType',
     panel: "emotionIntensivity_panel",
     view: "default_view",
   }
@@ -75,7 +77,9 @@ ReactDOM.render(
     <AdaptivityProvider>
       <AppRoot>
         <RouterProvider router={router}>
-          <App />
+          <Provider store={store}>
+            <App />
+          </Provider>
         </RouterProvider>
       </AppRoot>
     </AdaptivityProvider>
