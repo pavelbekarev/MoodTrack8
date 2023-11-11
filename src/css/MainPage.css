@@ -180,3 +180,16 @@
 .dayInfo-button:hover {
     background: var(--light-button-muted-background, #dee4f1);
 }
+
+.calendar_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emotions_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

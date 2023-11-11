@@ -45,30 +45,7 @@ const EmotionSadness = () => {
             <HeaderPanel />
             <Group className="dateLayout_wrapper">
                 <Div className="dateLayout">
-                    <CellButton 
-                        onClick={() => routeNavigator.back()} 
-                        centered 
-                        className="prevButton cellButton"
-                    >
-                        <Icon24ChevronCompactLeft
-                            className="cellButtonIcon" 
-                            style={{width: 16, height:24}}
-                        />
-                    </CellButton>
-
                     <Text className="textLayout">{currentDate}</Text>
-
-                    
-                    <CellButton 
-                        onClick={() => routeNavigator.push("/emotionIntensivity/:sadness")}
-                        centered 
-                        className="nextButton cellButton"
-                    >
-                        <Icon24ChevronCompactRight 
-                            className="cellButtonIcon" 
-                            style={{width: 16, height:24}}
-                        />
-                    </CellButton>
                 </Div>
             </Group>
 
@@ -96,6 +73,16 @@ const EmotionSadness = () => {
                     <CellButton centered className="cellbutton_wrapper">Вялость</CellButton>
                 </Div>
             </Div>
+
+            <Div className="button_wrapper">
+                    <CellButton 
+                        className="goNext-button" 
+                        centered
+                        onClick={() => routeNavigator.push("/emotionIntensivity/:sadness")}
+                    >
+                            Продолжить
+                        </CellButton>
+                </Div>
         </Panel>
     );
 }
