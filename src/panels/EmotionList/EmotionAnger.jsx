@@ -14,43 +14,30 @@ import HeaderPanel from "../../components/HeaderPanel";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import "../../css/Emotions.css";
 import { useDispatch } from "react-redux";
+import { DatePanel } from "../../components/DatePanel";
 
-const EmotionHappy = () => {
+const EmotionAnger = () => {
     const routeNavigator = useRouteNavigator();
     const dispatch = useDispatch();
 
-    let currentDate = new Date();
+    // const [currentDay, setCurrentDay] = useState(currentDate.getDate());
+    // const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
+    // const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
+    const [isEmotionChoose1, setIsEmotionChoose1] = useState(false);
+    const [isEmotionChoose2, setIsEmotionChoose2] = useState(false);
+    const [isEmotionChoose3, setIsEmotionChoose3] = useState(false);
+    const [isEmotionChoose4, setIsEmotionChoose4] = useState(false);
+    const [isEmotionChoose5, setIsEmotionChoose5] = useState(false);
+    const [isEmotionChoose6, setIsEmotionChoose6] = useState(false);
+    const [isEmotionChoose7, setIsEmotionChoose7] = useState(false);
+    const [isEmotionChoose8, setIsEmotionChoose8] = useState(false);
 
-    const month = {
-        1: "января",
-        2: "февраля",
-        3: "марта",
-        4: "апреля",
-        5: "мая",
-        6: "июня",
-        7: "июля",
-        8: "августа",
-        9: "сентября",
-        10: "октября",
-        11: "ноября",
-        12: "декабря"
-    }
-
-    const [currentDay, setCurrentDay] = useState(currentDate.getDate());
-    const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
-    const [currentYear, setCurrentYear] = useState(currentDate.getFullYear());
-
-    currentDate = `${currentDay} ${currentMonth}, ${currentYear}`
+    let cellbutton = document.getElementById("cellbutton");
 
     return (
         <Panel>
             <HeaderPanel />
-            <Group className="dateLayout_wrapper">
-                <Div className="dateLayout">
-                    <Text className="textLayout">{currentDate}</Text>
-                </Div>
-            </Group>
-            <Separator />
+            <DatePanel />
 
             <Spacing size={77}/>
 
@@ -61,73 +48,107 @@ const EmotionHappy = () => {
             <Div className="list_wrapper">
                 <Div className="cellbuttons_row">
                     <CellButton
+                        id="cellbutton1"
                         centered 
-                        className="cellbutton_wrapper"
-                        onClick={() => dispatch({type : "addEmotion", payload : "Гнев"})}
+                        className={isEmotionChoose1 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Гнев"});
+                            isEmotionChoose1 ? setIsEmotionChoose1(false) : setIsEmotionChoose1(true)
+                        }}
                     >
                         Гнев
                     </CellButton>
                     <CellButton 
+                        id="cellbutton2"
                         centered 
-                        className="cellbutton_wrapper" 
-                        onClick={() => dispatch({type : "addEmotion", payload : "Боль"})}
+                        className={isEmotionChoose2 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Боль"});
+                            isEmotionChoose2 ? setIsEmotionChoose2(false) : setIsEmotionChoose2(true)
+                        }}
                     >
                         Боль
                     </CellButton>
                     <CellButton 
+                        id="cellbutton3"
                         centered 
-                        className="cellbutton_wrapper" 
-                        onClick={() => dispatch({type : "addEmotion", payload : "Раздражение"})}
+                        className={isEmotionChoose3 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Раздражение"});
+                            isEmotionChoose3 ? setIsEmotionChoose3(false) : setIsEmotionChoose3(true)
+                        }}
                     >
                         Раздражение
                     </CellButton>
                     <CellButton 
+                        id="cellbutton4"
                         centered 
-                        className="cellbutton_wrapper" 
-                        onClick={() => dispatch({type : "addEmotion", payload : "Агрессия"})}
+                        className={isEmotionChoose4 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Агрессия"});
+                            isEmotionChoose4 ? setIsEmotionChoose4(false) : setIsEmotionChoose4(true)
+                        }}
                     >
                         Агрессия
                     </CellButton>
                 </Div>
                 <Div className="cellbuttons_row">
-                <CellButton 
+                    <CellButton 
+                        id="cellbutton5"
                         centered 
-                        className="cellbutton_wrapper" 
-                        onClick={() => dispatch({type : "addEmotion", payload : "Презрение"})}
+                        className={isEmotionChoose5 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Презрение"});
+                            isEmotionChoose5 ? setIsEmotionChoose5(false) : setIsEmotionChoose5(true)
+                        }}
                     >
                         Презрение
                     </CellButton>
                     <CellButton 
+                        id="cellbutton6"
                         centered 
-                        className="cellbutton_wrapper" 
-                        onClick={() => dispatch({type : "addEmotion", payload : "Свирепость"})}
+                        className={isEmotionChoose6 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Свирепость"});
+                            isEmotionChoose6 ? setIsEmotionChoose6(false) : setIsEmotionChoose6(true)
+                        }}
                     >
                         Свирепость
                     </CellButton>
                     <CellButton 
+                        id="cellbutton7"
                         centered 
-                        className="cellbutton_wrapper" 
-                        onClick={() => dispatch({type : "addEmotion", payload : "Ненависть"})}
+                        className={isEmotionChoose7 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Ненависть"});
+                            isEmotionChoose7 ? setIsEmotionChoose7(false) : setIsEmotionChoose7(true)
+                        }}
                     >
                         Ненависть
                     </CellButton>
                     <CellButton 
+                        id="cellbutton8"
                         centered 
-                        className="cellbutton_wrapper" 
-                        onClick={() => dispatch({type : "addEmotion", payload : "Враждебность"})}
+                        className={isEmotionChoose8 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        onClick={() => {
+                            dispatch({type : "addEmotion", payload : "Враждебность"});
+                            isEmotionChoose8 ? setIsEmotionChoose8(false) : setIsEmotionChoose8(true)
+                        }}
                     >
                         Враждебность
                     </CellButton>
                 </Div>
             </Div>
 
+            <Spacing size={50} />
+
             <Div className="button_wrapper">
                 <CellButton
-                    className="goNext-button" 
+                    className="save-button" 
                     centered
                     onClick={() => routeNavigator.push(`/emotionIntensivity/:anger`)}
                 >
-                    Продолжить
+                    Сохранить выбор
                 </CellButton>
             </Div>
 
@@ -137,4 +158,4 @@ const EmotionHappy = () => {
 }
 
 
-export default EmotionHappy;
+export default EmotionAnger;

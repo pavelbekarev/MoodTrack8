@@ -1,0 +1,7 @@
+.result_wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 351px;
+    height: 231px;
+    flex-shrink: 0;
+}

@@ -4,6 +4,12 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format("woff2");
+    font-weight: normal;
+}
+
 .title_text {
     display: flex;
     justify-content: center;
@@ -12,7 +18,11 @@
 
 .text {
     width: 287px;
-    color: rgba(121, 170, 218, 1);
+    background: rgba(121, 170, 218, 1);
+    background-image: rgb(121,170,218);
+    background: linear-gradient(90deg, rgba(121,170,218,1) 11%, rgba(195,242,156,1) 96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: "Poppins-Semibold";
@@ -50,6 +60,19 @@
     background: var(--light-button-secondary-background, rgba(0, 28, 61, 0.05));
 }
 
+.cellbutton_wrapper-active {
+    display: flex;
+    /* width: 167px; */
+    height: 36px;
+    padding: 0px 25px 0px 26px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(121, 170, 218, 1);
+    color: var(--light-button-primary-foreground, #FFF);
+}
+
 .set_intensivity_wrapper {
     display: flex;
     flex-direction: column;
@@ -76,10 +99,24 @@
 }
 
 .goNext-button {
-    width: 156px;
-    height: 36px;
-    margin: 0 auto;
+    border-radius: 8px;
+    background: var(--light-button-muted-background, #F2F3F5);
+}
 
+.goNext-button span {
+    font-family: "Roboto-Regular";
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.2px;
+}
+
+.goNext-button_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .button_wrapper {
@@ -87,4 +124,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.save-button {
+    display: flex;
+    /* width: 351px; */
+    height: 44px;
+    padding: 0px 104px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #79AADA;
 }

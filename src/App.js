@@ -36,6 +36,8 @@ import EmotionSadness from './panels/EmotionList/EmotionSadness';
 import EmotionSurprise from './panels/EmotionList/EmotionSurprise';
 import EmotionDislike from './panels/EmotionList/EmotionDislike';
 import EmotionIntensivity from './panels/EmotionIntensivity';
+import EmotionIntensivityVertical from './panels/EmotionIntensivityVertical';
+import { Actions } from './panels/Actions';
 
 import frame20 from "./img/Frame 20.svg";
 import frame21 from "./img/Frame 21.svg";
@@ -44,6 +46,8 @@ import frame23 from "./img/Frame 23.svg";
 import frame24 from "./img/Frame 24.svg";
 
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
+import EmotionDescription from './panels/EmotionDescription';
+import FinishPage from './panels/FinishPage';
 
 
 
@@ -229,7 +233,14 @@ const App = () => {
 									<EmotionSadness nav="emotionSadness_panel" />
 									<EmotionSurprise nav="emotionSurprise_panel" />
 									<EmotionDislike nav="emotionDislike_panel" />
+
+									{/* Вариант с горизонтальной шкалой */}
 									<EmotionIntensivity nav="emotionIntensivity_panel" />
+
+									{/* <EmotionIntensivityVertical nav="emotionIntensivity_panel"/> */}
+									<Actions nav="actions_panel" />
+									<EmotionDescription nav="emotionDescription_panel" />
+									<FinishPage nav="finishPage_panel" />
 								</View>
 							</Epic>
 						</SplitCol>

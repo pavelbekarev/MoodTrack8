@@ -65,6 +65,21 @@ const router = createHashRouter([
     path: 'emotionIntensivity/:emotionType',
     panel: "emotionIntensivity_panel",
     view: "default_view",
+  },
+  {
+    path: 'actions/:emotionType',
+    panel: "actions_panel",
+    view: "default_view",
+  },
+  {
+    path: 'emotionDescription/:emotionType',
+    panel: "emotionDescription_panel",
+    view: "default_view",
+  },
+  {
+    path: 'finishPage',
+    panel: "finishPage_panel",
+    view: "default_view",
   }
 
   
