@@ -1,5 +1,8 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { setEmotion } from "./setEmotion";
-import { createStore } from "@reduxjs/toolkit";
+import setEmotion from "./setEmotion";
 
-export const store = createStore(setEmotion);
+const rootReducer = combineReducers({
+    emotion: setEmotion
+})
+
+export const store = configureStore({reducer: rootReducer});

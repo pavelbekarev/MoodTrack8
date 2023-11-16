@@ -15,6 +15,7 @@ import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import "../../css/Emotions.css";
 import { useDispatch } from "react-redux";
 import { DatePanel } from "../../components/DatePanel";
+import { addEmotion } from "../../store/setEmotion";
 
 const EmotionSadness = () => {
     const routeNavigator = useRouteNavigator();
@@ -50,7 +51,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose1 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Апатия"});
+                            dispatch(addEmotion("Апатия "));
                             isEmotionChoose1 ? setIsEmotionChoose1(false) : setIsEmotionChoose1(true)
                         }}
                     >
@@ -61,7 +62,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose2 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Отчаяние"});
+                            dispatch(addEmotion("Отчаяние "));
                             isEmotionChoose2 ? setIsEmotionChoose2(false) : setIsEmotionChoose2(true)
                         }}
                     >
@@ -72,7 +73,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose3 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Потерянность"});
+                            dispatch(addEmotion("Потерянность "));
                             isEmotionChoose3 ? setIsEmotionChoose3(false) : setIsEmotionChoose3(true)
                         }}
                     >
@@ -83,7 +84,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose4 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Подавленность"});
+                            dispatch(addEmotion("Подавленность "));
                             isEmotionChoose4 ? setIsEmotionChoose4(false) : setIsEmotionChoose4(true)
                         }}
                     >
@@ -96,7 +97,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose5 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Одиночество"});
+                            dispatch(addEmotion("Одиночество "));
                             isEmotionChoose5 ? setIsEmotionChoose5(false) : setIsEmotionChoose5(true)
                         }}
                     >
@@ -107,7 +108,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose6 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Стыд"});
+                            dispatch(addEmotion("Стыд "));
                             isEmotionChoose6 ? setIsEmotionChoose6(false) : setIsEmotionChoose6(true)
                         }}
                     >
@@ -118,7 +119,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose7 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Печаль"});
+                            dispatch(addEmotion("Печаль "));
                             isEmotionChoose7 ? setIsEmotionChoose7(false) : setIsEmotionChoose7(true)
                         }}
                     >
@@ -129,7 +130,7 @@ const EmotionSadness = () => {
                         centered 
                         className={isEmotionChoose8 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
                         onClick={() => {
-                            dispatch({type : "addEmotion", payload : "Вялость"});
+                            dispatch(addEmotion("Вялость "));
                             isEmotionChoose8 ? setIsEmotionChoose8(false) : setIsEmotionChoose8(true)
                         }}
                     >

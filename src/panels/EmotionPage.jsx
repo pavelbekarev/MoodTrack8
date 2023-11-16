@@ -15,17 +15,20 @@ import "../css/EmotionPage.css"
 import { Icon24ChevronCompactRight } from '@vkontakte/icons';
 import { Icon24ChevronCompactLeft } from '@vkontakte/icons';
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
+import { useDispatch } from "react-redux";
 
 import frame20 from "../img/Frame 20.svg";
 import frame21 from "../img/Frame 21.svg";
 import frame22 from "../img/Frame 22.svg";
 import frame23 from "../img/Frame 23.svg";
 import frame24 from "../img/Frame 24.svg";
+import { setEmotionImage } from "../store/setEmotion";
 
 const EmotionPage = () => {
     const routeNavigator = useRouteNavigator();
     const [emotion_id, setEmotion_id] = useState("");
     let currentDate = new Date();
+    const dispatch = useDispatch();
 
     
     const month = {
@@ -55,12 +58,6 @@ const EmotionPage = () => {
     const [frame23Flag, setFrame23Flag] = useState(false);
     const [frame24Flag, setFrame24Flag] = useState(false);
     const [isReactionSelected, setIsReactionSelected] = useState(false);
-
-
-
-    function setEmotion() {
-        
-    }
 
     return (
         <Panel>
@@ -122,10 +119,10 @@ const EmotionPage = () => {
 
             <Div className="emotions__wrapper">
                 <Cell onClick={() => {
+                    dispatch(setEmotionImage("frame20"))
                     setIsReactionSelected(true);
                     setFrame20Flag(true);
                     setEmotion_id("happy");
-                    setEmotion();
                 }} id="frame20">
                     <div className="cell">
                         <img className="cell_img" src={frame20} alt="" />
@@ -136,7 +133,6 @@ const EmotionPage = () => {
                     setIsReactionSelected(true);
                     setFrame24Flag(true);
                     setEmotion_id("anger");
-                    setEmotion();
                 }} id="frame24">
                     <div className="cell">
                         <img className="cell_img" src={frame24} alt="" />
@@ -147,7 +143,6 @@ const EmotionPage = () => {
                     setIsReactionSelected(true);
                     setFrame21Flag(true);
                     setEmotion_id("sadness");
-                    setEmotion();
                 }} id="frame21" src={frame21}>
                     <div className="cell">
                         <img className="cell_img" src={frame21} alt="" />
@@ -158,7 +153,6 @@ const EmotionPage = () => {
                     setIsReactionSelected(true);
                     setFrame22Flag(true);
                     setEmotion_id("surprise");
-                    setEmotion();
                 }} id="frame22">
                     <div className="cell">
                         <img className="cell_img" src={frame22} alt="" />
@@ -169,7 +163,6 @@ const EmotionPage = () => {
                     setIsReactionSelected(true);
                     setFrame23Flag(true);
                     setEmotion_id("dislike");
-                    setEmotion();
                 }} id="frame23">
                     <div className="cell">
                         <img className="cell_img" src={frame23} alt="" />

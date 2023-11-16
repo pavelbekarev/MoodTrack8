@@ -49,11 +49,14 @@ import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import EmotionDescription from './panels/EmotionDescription';
 import FinishPage from './panels/FinishPage';
 
+import { useDispatch } from 'react-redux';
+import { setEmotionImage } from './store/setEmotion';
+
 
 
 const App = () => {
 	const routeNavigator = useRouteNavigator();
-
+	const dispatch = useDispatch();
 
 	const [fetchedUser, setUser] = useState(null);
 	const [activeStory, setActiveStory] = useState("");
@@ -126,6 +129,7 @@ const App = () => {
                         id="frame20"
 						onClick={() => {
 							setFrame20Flag(true);
+							dispatch(setEmotionImage(frame20));
 							setTimeout(() => {
 								routeNavigator.push(`/emotion_list:happy`);
 								setActiveModal(null);
@@ -143,6 +147,7 @@ const App = () => {
                         id="frame24"
 						onClick={() => {
 							setFrame24Flag(true);
+							dispatch(setEmotionImage(frame24));
 							setTimeout(() => {
 								routeNavigator.push(`/emotion_list:anger`);
 								setActiveModal(null);
@@ -159,6 +164,7 @@ const App = () => {
                         id="frame21"
 						onClick={() => {
 							setFrame21Flag(true);
+							dispatch(setEmotionImage(frame21));
 							setTimeout(() => {
 								routeNavigator.push(`/emotion_list:sadness`);
 								setActiveModal(null);
@@ -175,6 +181,7 @@ const App = () => {
                         id="frame22"
 						onClick={() => {
 							setFrame22Flag(true);
+							dispatch(setEmotionImage(frame22));
 							setTimeout(() => {
 								routeNavigator.push(`/emotion_list:surprise`);
 								setActiveModal(null);
@@ -191,6 +198,7 @@ const App = () => {
                         id="frame23"
 						onClick={() => {
 							setFrame23Flag(true);
+							dispatch(setEmotionImage(frame23));
 							setTimeout(() => {
 								routeNavigator.push(`/emotion_list:dislike`);
 								setActiveModal(null);
