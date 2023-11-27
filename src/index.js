@@ -80,10 +80,17 @@ const router = createHashRouter([
     path: 'finishPage',
     panel: "finishPage_panel",
     view: "default_view",
+  },
+  {
+    path: 'articlePage',
+    panel: "articlePage_panel",
+    view: "default_view",
+  },
+  {
+    path: 'menu',
+    panel: "menu_panel",
+    view: "default_view",
   }
-
-  
-
 ]);
 
 

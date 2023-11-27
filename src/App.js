@@ -10,12 +10,11 @@ import {
 	SplitCol, 
 	Epic,
 	ModalRoot,
-	ModalPage,
 	Div,
 	Cell,
 	ModalPageHeader,
-	PanelHeaderClose,
 	ModalCard,
+	Text
 
 } from '@vkontakte/vkui';
 
@@ -28,7 +27,6 @@ import ProfilePage from './panels/ProfilePage';
 import EmotionPage from './panels/EmotionPage';
 
 import "./css/MainPage.css";
-import "./css/LoadPage.css";
 import "./css/EmotionPage.css"
 import EmotionHappy from './panels/EmotionList/EmotionHappy';
 import EmotionAnger from './panels/EmotionList/EmotionAnger';
@@ -51,6 +49,8 @@ import FinishPage from './panels/FinishPage';
 
 import { useDispatch } from 'react-redux';
 import { setEmotionImage } from './store/setEmotion';
+import ArticlePage from './panels/ArticlePage';
+import MenuPage from './panels/MenuPage';
 
 
 
@@ -120,7 +120,9 @@ const App = () => {
 				onClose={modalBack}
                 header={
                     <ModalPageHeader>
-                        Выбери свою эмоцию!
+						<Text className='text-chooseEmotion'>
+                        	Выбери свою эмоцию!
+						</Text>
                     </ModalPageHeader>
                 }
             >
@@ -139,7 +141,7 @@ const App = () => {
                     >
 						<div className='cell'>
 							<img className="cell_img" src={frame20} alt="" />
-							{frame20Flag && <span className="emotionText20">Радость</span>}
+							{frame20Flag && <span className="emotionText emotionText20">Радость</span>}
 						</div>
                         
                     </Cell>
@@ -157,7 +159,7 @@ const App = () => {
                     >
                         <div className='cell'>
 							<img className="cell_img" src={frame24} alt="" />
-							{frame24Flag && <span className="emotionText24">Злость</span>}
+							{frame24Flag && <span className="emotionText emotionText24">Злость</span>}
 						</div>
                     </Cell>
                     <Cell 
@@ -174,7 +176,7 @@ const App = () => {
                     >
                         <div className="cell">
                             <img className="cell_img" src={frame21} alt="" />
-							{frame21Flag && <span className="emotionText21">Грусть</span>}
+							{frame21Flag && <span className="emotionText emotionText21">Грусть</span>}
                         </div>
                     </Cell>
                     <Cell 
@@ -191,7 +193,7 @@ const App = () => {
                     >
                         <div className="cell">
                             <img className="cell_img" src={frame22} alt="" />
-							{frame22Flag && <span className="emotionText22">Удивление</span>}
+							{frame22Flag && <span className="emotionText emotionText22">Удивление</span>}
                         </div>
                     </Cell>
                     <Cell 
@@ -208,7 +210,7 @@ const App = () => {
                     >
                         <div className="cell">
                             <img className="cell_img" src={frame23} alt="" />
-							{frame23Flag && <span className="emotionText23">Неприязнь</span>}
+							{frame23Flag && <span className="emotionText emotionText23">Неприязнь</span>}
                         </div>
                     </Cell>
                 </Div>
@@ -235,6 +237,7 @@ const App = () => {
 								<View nav={activeView} activePanel={activePanel}>
 									<CalendarPage changeActiveModal={changeActiveModal} nav="home_panel" />
 									<ProfilePage nav="profile_panel" />
+									<MenuPage nav="menu_panel" />
 									{/* <EmotionPage nav="emotions_panel"/> */}
 									<EmotionHappy nav="emotionHappy_panel" />
 									<EmotionAnger nav="emotionAnger_panel" />
@@ -249,6 +252,7 @@ const App = () => {
 									<Actions nav="actions_panel" />
 									<EmotionDescription nav="emotionDescription_panel" />
 									<FinishPage nav="finishPage_panel" />
+									<ArticlePage nav="articlePage_panel" />
 								</View>
 							</Epic>
 						</SplitCol>

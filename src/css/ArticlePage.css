@@ -1,0 +1,109 @@
+.snackbar {
+    position: absolute;
+    top: 20;
+}
+
+.article_text {
+    width: 220px;
+    font-size: 20px;
+}
+
+.banner_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    display: flex;
+    width: 375px;
+    padding: 0px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    font-size: 20px;
+}
+
+.banner-button {
+    margin-top: 16px;
+    display: flex;
+    height: 36px;
+    padding: 0px 16px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 8px;
+    background: #79AADA;
+}
+
+
+
+/* 
+.banner {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 0.33px solid var(--light-image-border, rgba(0, 0, 0, 0.08));
+    background: var(--light-background-content-tint-background, #F5F5F5);
+} */
+
+.goByLink_button-wrapper {
+    width: 61px;
+    display: flex;
+    height: 36px;
+    padding: 0px 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 8px;
+    background: #79AADA;
+}
+
+.goByLink_button {
+    color: var(--light-button-primary-foreground, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.2px;
+    text-decoration: none;
+}
+
+.toHome_button-wrapper {
+    height: 36px;
+    padding: 0px 20px;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--light-button-muted-background, #F2F3F5);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.toHome_button {
+    display: flex;
+    flex-direction: row ;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.snackBar {
+
+    z-index: 0;
+}
+
+.save-button {
+    color: #79AADA;
+    font-feature-settings: 'clig' off, 'liga' off;
+    /* R Text Medium */
+    font-family: Roboto;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 133.333% */
+    letter-spacing: 0.2px;
+}

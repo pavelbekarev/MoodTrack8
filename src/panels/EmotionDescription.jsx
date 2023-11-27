@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { useParams } from "@vkontakte/vk-mini-apps-router";
 import { Icon24ChevronCompactRight } from "@vkontakte/icons";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
+import { useDispatch } from "react-redux";
 
 import frame24 from "../img/Frame 24.svg";
 import frame20 from "../img/Frame 20.svg";
@@ -22,6 +23,7 @@ import frame22 from "../img/Frame 22.svg";
 import frame23 from "../img/Frame 23.svg";
 
 import "../css/EmotionDescription.css";
+import { setEmotionText } from "../store/setEmotion";
 
 const EmotionDescription = () => {
     const [image, setImage] = useState();
@@ -29,6 +31,8 @@ const EmotionDescription = () => {
     const [activeEmotion, setActiveEmotion] = useState("");
     const [textValue, setTextValue] = useState("");
     const routeNavigator = useRouteNavigator();
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         if (params.emotionType === ':anger'){
@@ -113,11 +117,14 @@ const EmotionDescription = () => {
 
             <Spacing size={20} />
 
-            <Div className="button_wrapper">
+            <Div className="button_wrapper-description">
                 <CellButton 
                     className="goNext-button"
                     centered
-                    onClick={() => routeNavigator.push(`/finishPage`)}
+                    onClick={() => {
+                        routeNavigator.push(`/finishPage`);
+                        dispatch(setEmotionText(textValue));
+                    }}
                 >
                     <div className="goNext-button_wrapper">
                         <span>Продолжить</span>

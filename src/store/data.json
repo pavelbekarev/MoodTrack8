@@ -1,0 +1,169 @@
+[
+    {
+        "id": 1,
+        "type": "anger",
+        "url": "https://www.psychologies.ru/wellbeing/meditaciya-3-tekhniki-kotorye-ispolzuyut-psikhologi/",
+        "header": "Медитация: 3 техники,",
+        "subtitle": "которые используют психологи"
+    },
+    {
+        "id": 2,
+        "type": "anger",
+        "url": "https://www.psychologies.ru/standpoint/41-net-kotoroe-sdelaet-vas-schastlivee/",
+        "header": "41 «нет»,",
+        "subtitle": "которое сделает вас счастливее"
+    },
+    {
+        "id": 3,
+        "type": "anger",
+        "url": "https://www.psychologies.ru/articles/18-priznakov-togo-chto-vyi-vyisokochuvstvitelnyiy-chelovek/",
+        "header": "18 признаков того, что",
+        "subtitle": "вы высокочувствительный человек"
+    },
+    {
+        "id": 4,
+        "type": "anger",
+        "url": "https://www.psychologies.ru/articles/10-sposobov-spravitsya-s-trevojnostyu/",
+        "header": "10 способов",
+        "subtitle": "справиться с тревожностью"
+    },
+    {
+        "id": 5,
+        "type": "surprise",
+        "url": "https://www.psychologies.ru/articles/neiroset-vs-trevoga-3-prostykh-uprazhneniya-kotorye-pomogut-spravitsya-so-stressom/",
+        "header": "Нейросеть vs тревога:",
+        "subtitle": "3 простых упражнения, которые помогут справиться со стрессом"
+    }
+    ,
+    {
+        "id": 6,
+        "type": "surprise",
+        "url": "https://www.psychologies.ru/articles/ekspress-test-ot-psikhiatra-kotoryi-opredelit-vash-uroven-trevozhnosti/?utm_source=facebook.com",
+        "header": "Экспресс-тест от психиатра,",
+        "subtitle": "который определит ваш уровень тревожности"
+    }
+    ,
+    {
+        "id": 7,
+        "type": "surprise",
+        "url": "https://www.psychologies.ru/articles/sila-slov-pochemu-nado-govorit-o-svoih-chuvstvah/",
+        "header": "Сила слов:",
+        "subtitle": "почему надо говорить о своих чувствах"
+    }
+    ,
+    {
+        "id": 8,
+        "type": "surprise",
+        "url": "https://www.psychologies.ru/wellbeing/meditaciya-3-tekhniki-kotorye-ispolzuyut-psikhologi/",
+        "header": "Медитация:",
+        "subtitle": "3 техники,которые используют психологи"
+    },
+    {
+        "type": "surprise",
+        "url": "https://www.psychologies.ru/articles/10-sposobov-spravitsya-s-trevojnostyu/",
+        "header": "10 способов",
+        "subtitle": "справиться с тревожностью"
+    },
+    {
+        "type": "happy",
+        "url": "https://www.psychologies.ru/articles/10-citat-andreya-kurpatova-kotorye-zastavyat-pereocenit-svoi-zhiznennyi-put/",
+        "header": "10 цитат Андрея Курпатова,",
+        "subtitle": "которые заставят переоценить свой жизненный путь"
+    },
+    {
+        "type": "happy",
+        "url": "https://www.psychologies.ru/articles/tainye-signaly-kak-ponyat-o-chem-govoryat-chuvstva-5-shagov/",
+        "header": "Тайные сигналы:",
+        "subtitle": "как понять, о чем говорят чувства, — 5 шагов"
+    },
+    {
+        "type": "happy",
+        "url": "https://www.psychologies.ru/articles/10-citat-lva-vygotskogo-kotorye-pomogut-sdelat-budushee-schastlivym/",
+        "header": "10 цитат Льва Выготского,",
+        "subtitle": "которые помогут сделать будущее счастливым"
+    },
+    {
+        "type": "happy",
+        "url": "https://www.psychologies.ru/wellbeing/ekstraverty-nevrotiki-i-toksiki-chto-govorit-o-vas-lyubimoe-blyudo-proverte-sebya/",
+        "header": "Экстраверты, невротики и токсики:",
+        "subtitle": "что говорит о вас любимое блюдо — проверьте себя"
+    },
+    {
+        "type": "dislike",
+        "url": "https://www.psychologies.ru/articles/kak-ustanovit-svoi-lichnye-granicy-i-ne-narushit-chuzhie/",
+        "header": "Как",
+        "subtitle": "установить свои личные границы и не нарушить чужие"
+    },
+    {
+        "type": "dislike",
+        "url": "https://www.psychologies.ru/standpoint/kak-raspoznat-passivno-agressivnogo-partnera-11-taktik-manipulirovaniya/",
+        "header": "Как распознать пассивно-агрессивного партнера:",
+        "subtitle": "11 тактик манипулирования"
+    },
+    {
+        "type": "dislike",
+        "url": "https://www.psychologies.ru/articles/assertivnost-kak-byt-uverennym-no-ne-agressivnym-i-berech-svoi-granicy/",
+        "header": "Ассертивность:",
+        "subtitle": "как быть уверенным, но не агрессивным, и беречь свои границы"
+    },
+    {
+        "type": "dislike",
+        "url": "https://www.psychologies.ru/articles/tainye-signaly-kak-ponyat-o-chem-govoryat-chuvstva-5-shagov/",
+        "header": "Тайные сигналы:",
+        "subtitle": "как понять, о чем говорят чувства, — 5 шагов"
+    },
+    {
+        "type": "dislike",
+        "url": "https://www.psychologies.ru/articles/ya-vsem-dolzhen-pochemu-nas-pugaet-slovo-dolg/",
+        "header": "Я всем должен:",
+        "subtitle": "почему нас пугает слово «долг»?"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/articles/negativnyie-myisli-o-sebe-tehnika-razvorota-na-180-gradusov/",
+        "header": "Негативные мысли о себе:",
+        "subtitle": "техника разворота на 180 градусов"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/standpoint/lyubit-sebya-chto-eto-znachit/",
+        "header": "Любить себя:",
+        "subtitle": "что это значит"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/articles/sila-slov-pochemu-nado-govorit-o-svoih-chuvstvah/",
+        "header": "Сила слов:",
+        "subtitle": "почему надо говорить о своих чувствах"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/articles/dushevnaya-pustota-chto-eto-i-kak-ee-pravilno-zapolnyat-5-shagov/",
+        "header": "Душевная пустота:",
+        "subtitle": "что это и как ее правильно заполнять — 5 шагов"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/articles/ekspress-test-ot-psikhiatra-kotoryi-opredelit-vash-uroven-trevozhnosti/?utm_source=facebook.com",
+        "header": "Экспресс-тест от психиатра,",
+        "subtitle": "который определит ваш уровень тревожности"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/standpoint/poleznoe-bezdele-zachem-nuzhna-prokrastinaciya-5-neozhidannykh-plyusov/",
+        "header": "Полезное безделье:",
+        "subtitle": "зачем нужна прокрастинация — 5 неожиданных плюсов"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/standpoint/41-net-kotoroe-sdelaet-vas-schastlivee/",
+        "header": "41 «нет»,",
+        "subtitle": "которое сделает вас счастливее"
+    },
+    {
+        "type": "sadness",
+        "url": "https://www.psychologies.ru/story/kak-borotsya-s-trevozhno-izbegayushim-tipom-privyazannosti/",
+        "header": "«Как бороться",
+        "subtitle": "с тревожно-избегающим типом привязанности?»"
+    }
+]

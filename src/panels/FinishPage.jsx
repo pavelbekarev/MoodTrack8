@@ -2,9 +2,11 @@ import {
     Panel, 
     Spacing,
     Div,
-    Text
+    Text,
+    Group,
+    CellButton
 } from "@vkontakte/vkui";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HeaderPanel from "../components/HeaderPanel";
 import { DatePanel } from "../components/DatePanel";
 import "../css/FinishPage.css";
@@ -14,30 +16,55 @@ import frame21 from "../img/Frame 21.svg";
 import frame22 from "../img/Frame 22.svg";
 import frame23 from "../img/Frame 23.svg";
 import frame24 from "../img/Frame 24.svg";
+import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 
-const FinishPage = () => {
+const FinishPage = () => {  
+    let styleCss = "";
+    const routeNavigator = useRouteNavigator();
+
     const emotions = useSelector(state => state.emotion.emotions)
     const emotionImage = useSelector(state => state.emotion.emotionImage);
+    const sliderValue = useSelector(state => state.emotion.sliderValue);
+    const date = useSelector(state => state.emotion.date)
+    const actions = useSelector(state => state.emotion.actions).map(action => <img className={`action ${styleCss}`} src={action} alt="Действие"/>)
+    const emotionText = useSelector(state => state.emotion.emotionText)
 
-    // if (emotionImage === "frame20") {
-    //     setImage(frame20)
-    // }
+    const emotionIntensivityList = {
+        0: "",
+        1: "очень слабо",
+        2: "слабо",
+        3: "умеренно",
+        4: "сильно",
+        5: "очень сильно"
+    }
 
-    // if (emotionImage === "frame21") {
-    //     setImage(frame21)
-    // }
+    let emotionType = "";
+    if (emotionImage === frame20) {
+        emotionType = "Счастье";
+        styleCss = "happy";
+    }
 
-    // if (emotionImage === "frame22") {
-    //     setImage(frame22)
-    // }
+    if (emotionImage === frame24) {
+        emotionType = "Агрессия";
+        styleCss = "anger";
 
-    // if (emotionImage === "frame23") {
-    //     setImage(frame23)
-    // }
+    }
 
-    // if (emotionImage === "frame24") {
-    //     setImage(frame24)
-    // }
+    if (emotionImage === frame21) {
+        emotionType = "Грусть";
+        styleCss = "sadness";
+    }
+
+    if (emotionImage === frame22) {
+        emotionType = "Удивление";
+        styleCss = "surprise";
+    }
+
+    if (emotionImage === frame23) {
+        emotionType = "Неприязнь";
+        styleCss = "dislike";
+    }
+
 
     return (
         <Panel>
@@ -47,7 +74,7 @@ const FinishPage = () => {
             <Spacing size={20} />
 
             <Div className="title_text">
-                <Text className="text">
+                <Text className="text finish_text">
                     Отлично!<br />
                     Продолжай записывать свои эмоции и твой дневник наполнится озарениями.
                 </Text>
@@ -55,11 +82,29 @@ const FinishPage = () => {
 
             <Div className="result_wrapper">
                 <Div className="image_wrapper">
-                    <img src={emotionImage} alt="" />
+                    <img className="emotionImage" src={emotionImage} alt="" />
                 </Div>
                 <Div className="info_wrapper">
-                    {emotions}
+                    <Text className={`date-info`} >{`Сегодня, ${date}`}</Text>
+                    <Text className={`emotionType-info ${styleCss}`} >{`${emotionType}, интенсивность: ${emotionIntensivityList[sliderValue]}`}</Text>
+                    <Text className={`text-info ${styleCss}`}>{emotions.map(e => `${e.toLowerCase()}`)}</Text>
+                    <Text className={`actions-info ${styleCss}`} >{actions}</Text>
+                    <Text className={`emotion-text ${styleCss}`} >{emotionText}</Text>
                 </Div>
+            </Div>
+
+
+            <Div className="button_wrapper-finish">
+                <CellButton
+                    className="save-button" 
+                    centered
+                    onClick={() => {
+                        // dispatch(addEmotion(emotionsList))
+                        routeNavigator.push(`/articlePage`);
+                    }}
+                >
+                    Сохранить запись
+                </CellButton>
             </Div>
         </Panel>
     );

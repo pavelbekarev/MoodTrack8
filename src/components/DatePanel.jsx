@@ -2,14 +2,21 @@ import {
     Group,
     Div,
     Text,
-    Separator
+    Separator,
+    Spacing
 } from "@vkontakte/vkui";
 import React, {useState} from "react";
 import "../css/Emotions.css";
 import "../css/EmotionPage.css";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { setDate } from "../store/setEmotion";
 
 export const DatePanel = () => {
+    const dispatch = useDispatch();
+    
     let currentDate = new Date();
+
 
     const month = {
         1: "января",
@@ -32,6 +39,11 @@ export const DatePanel = () => {
 
     currentDate = `${currentDay} ${currentMonth}, ${currentYear}`;
 
+    let currentDateWOYear = `${currentDay} ${currentMonth}`;
+
+    useEffect(() => {
+        dispatch(setDate(currentDateWOYear));
+    }, [currentDate])
 
     return (
         <>
@@ -40,6 +52,7 @@ export const DatePanel = () => {
                     <Text className="textLayout">{currentDate}</Text>
                 </Div>
             </Group>
+            <Spacing size={16} />
             <Separator />
         </>
     );

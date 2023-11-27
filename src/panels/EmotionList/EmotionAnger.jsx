@@ -21,8 +21,8 @@ import { useSelector } from "react-redux";
 const EmotionAnger = () => {
     const routeNavigator = useRouteNavigator();
     const dispatch = useDispatch();
-    const emotions = useSelector(state => state.emotion.actions)
-    const emotionsList = [];
+    const choosenEmotions = useSelector(state => state.emotion.emotions)
+
 
     // const [currentDay, setCurrentDay] = useState(currentDate.getDate());
     // const [currentMonth, setCurrentMonth] = useState(month[currentDate.getMonth() + 1]);
@@ -46,7 +46,7 @@ const EmotionAnger = () => {
             <Spacing size={77}/>
 
             <Div className="title_text">
-                <span className="text">Давай уточним, что ты еще испытал</span>
+                <span className="text emotions_text">Давай уточним, что ты еще испытал</span>
             </Div>
 
             <Div className="list_wrapper">
@@ -54,11 +54,11 @@ const EmotionAnger = () => {
                     <CellButton
                         id="cellbutton1"
                         centered 
-                        className={isEmotionChoose1 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        className={isEmotionChoose1 ? "cellbutton_wrapper-active": "cellbutton_wrapper"} 
                         onClick={() => {
-                            // emotionsList.push("Гнев")
                             dispatch(addEmotion("Гнев "));
                             isEmotionChoose1 ? setIsEmotionChoose1(false) : setIsEmotionChoose1(true)
+                            
                         }}
                     >
                         Гнев
@@ -66,7 +66,7 @@ const EmotionAnger = () => {
                     <CellButton 
                         id="cellbutton2"
                         centered 
-                        className={isEmotionChoose2 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        className={isEmotionChoose2 ? "cellbutton_wrapper-active": "cellbutton_wrapper"} 
                         onClick={() => {
                             dispatch(addEmotion("Боль "));
                             isEmotionChoose2 ? setIsEmotionChoose2(false) : setIsEmotionChoose2(true)
@@ -77,7 +77,7 @@ const EmotionAnger = () => {
                     <CellButton 
                         id="cellbutton3"
                         centered 
-                        className={isEmotionChoose3 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        className={isEmotionChoose3 ? "cellbutton_wrapper-active": "cellbutton_wrapper"} 
                         onClick={() => {
                             dispatch(addEmotion("Раздражение "));
                             isEmotionChoose3 ? setIsEmotionChoose3(false) : setIsEmotionChoose3(true)
@@ -88,7 +88,7 @@ const EmotionAnger = () => {
                     <CellButton 
                         id="cellbutton4"
                         centered 
-                        className={isEmotionChoose4 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        className={isEmotionChoose4 ? "cellbutton_wrapper-active": "cellbutton_wrapper"} 
                         onClick={() => {
                             dispatch(addEmotion("Агрессия "));
                             isEmotionChoose4 ? setIsEmotionChoose4(false) : setIsEmotionChoose4(true)
@@ -101,7 +101,7 @@ const EmotionAnger = () => {
                     <CellButton 
                         id="cellbutton5"
                         centered 
-                        className={isEmotionChoose5 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        className={isEmotionChoose5 ? "cellbutton_wrapper-active": "cellbutton_wrapper"} 
                         onClick={() => {
                             dispatch(addEmotion("Презрение "));
                             isEmotionChoose5 ? setIsEmotionChoose5(false) : setIsEmotionChoose5(true)
@@ -112,7 +112,7 @@ const EmotionAnger = () => {
                     <CellButton 
                         id="cellbutton6"
                         centered 
-                        className={isEmotionChoose6 ? "cellbutton_wrapper-active" : "cellbutton_wrapper"} 
+                        className={isEmotionChoose6 ? "cellbutton_wrapper-active": "cellbutton_wrapper"} 
                         onClick={() => {
                             dispatch(addEmotion("Свирепость "));
                             isEmotionChoose6 ? setIsEmotionChoose6(false) : setIsEmotionChoose6(true)
@@ -145,22 +145,37 @@ const EmotionAnger = () => {
                 </Div>
             </Div>
 
-            <Spacing size={50} />
+            {
+                choosenEmotions.length !== 3 
+                ?
+                <Text className="choose3-text">Выбери до 3</Text>
+                :
+                <Div className="button_wrapper-emotion">
+                    <CellButton
+                        className="save-button" 
+                        centered
+                        onClick={() => {
+                            routeNavigator.push(`/emotionIntensivity/:anger`);
+                        }}
+                    >
+                        Продолжить
+                    </CellButton>
+                </Div>
+            }
+            {/* <Text className="choose3-text">Выбери до 3</Text>
 
             <Div className="button_wrapper">
                 <CellButton
                     className="save-button" 
                     centered
+                    disabled={choosenEmotions.length !== 3}
                     onClick={() => {
-                        // dispatch(addEmotion(emotionsList))
                         routeNavigator.push(`/emotionIntensivity/:anger`);
                     }}
                 >
-                    Сохранить выбор
+                    Продолжить
                 </CellButton>
-            </Div>
-
-            
+            </Div> */}
         </Panel>
     );
 }

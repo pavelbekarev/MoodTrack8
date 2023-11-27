@@ -13,9 +13,9 @@ import {
     ModalPage,
     ModalPageHeader
 } from "@vkontakte/vkui";
+import "../css/EmotionPage.css";
 
 import { Icon24ChevronCompactRight } from '@vkontakte/icons';
-import "../css/MainPage.css";
 import HeaderPanel from "../components/HeaderPanel";
 import "@vkontakte/vkui/dist/cssm/components/CalendarDay/CalendarDay";
 import { useRouteNavigator } from '@vkontakte/vk-mini-apps-router';
@@ -47,6 +47,7 @@ const CalendarPage = (props) => {
     useEffect(() => {
         setCurrentDate(() => new Date())
     }, [dateValue]);
+
 
     function checkDate() {
         if (dateYear === currentYear) 
@@ -126,15 +127,15 @@ const CalendarPage = (props) => {
                         <FormItem className="dayInfo-wrapper">
                                 
                             {
-                                currentDate.toLocaleDateString() && dateValue.toLocaleDateString()
-                                ?
-                                <Div>
-                                    <Text>{dateValue.toLocaleDateString()}</Text>
-                                    <br/>
-                                    <Text>{currentDate.toLocaleDateString()}</Text>
-                                </Div>
-                                :
-                                <Text>Nothing</Text>
+                                // currentDate.toLocaleDateString() && dateValue.toLocaleDateString()
+                                // ?
+                                // <Div>
+                                //     <Text>{dateValue.toLocaleDateString()}</Text>
+                                //     <br/>
+                                //     <Text>{currentDate.toLocaleDateString()}</Text>
+                                // </Div>
+                                // :
+                                // <Text>Nothing</Text>
 
                                 // <Div className="emotions_wrapper">
                                 //     <Cell 

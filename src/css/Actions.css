@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Poppins-Light';
-    src: url('../fonts/Poppins-Light.ttf') format("woff2");
+    font-family: 'Montserrat-Light';
+    src: url('../fonts/Montserrat-Light.ttf') format("woff2");
     font-weight: normal;
 }
 
@@ -14,6 +14,82 @@
     background: var(--light-background-modal-card-background, #FFF);
 }
 
+.actions_variations_grid {
+    display: grid;
+    grid-template-areas: 
+        "a11 a12 a13 a14"
+        "a21 a22 a23 a24"
+        "a31 a32 a33 a34"
+        "a41 a42 a43 a44";
+    border-radius: 30px;
+    border: 0.5px solid var(--light-image-border, rgba(0, 0, 0, 0.08));
+    background: var(--light-background-modal-card-background, #FFF);
+}
+
+.action11 {
+    grid-area: a11;
+}
+
+.action12 {
+    grid-area: a12;
+}
+
+.action13 {
+    grid-area: a13;
+}
+
+.action14 {
+    grid-area: a14;
+}
+
+.action21 {
+    grid-area: a21;
+}
+
+.action22 {
+    grid-area: a22;
+}
+
+.action23 {
+    grid-area: a23;
+}
+
+.action24 {
+    grid-area: a24;
+}
+
+.action31 {
+    grid-area: a31;
+}
+
+.action32 {
+    grid-area: a32;
+}
+
+.action33 {
+    grid-area: a33;
+}
+
+.action34 {
+    grid-area: a34;
+}
+
+.action41 {
+    grid-area: a41;
+}
+
+.action42 {
+    grid-area: a42;
+}
+
+.action43 {
+    grid-area: a43;
+}
+
+.action44 {
+    grid-area: a44;
+}
+
 .action_container {
     display: flex;
     flex-direction: column;
@@ -24,13 +100,19 @@
 
 .action_cellbutton {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 87px;
 }
 
 .action_cellbutton-active {
     border-radius: 50px;
     background: #79AADA;;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .goNext-button {
@@ -46,7 +128,7 @@
 .action_discription {
     color: #79AADA;
     text-align: center;
-    font-family: "Poppins-Light";
+    font-family: 'Montserrat-Light';
     font-size: 14px;
     font-weight: 300;
     line-height: 24px; 
@@ -56,4 +138,105 @@
 
 .action_discription {
     line-height: 12px; 
+}
+
+.button_wrapper-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 28px;
+}
+
+.actions_text {
+    width: 230px;
+}
+
+.action_image {
+    width: 52px;
+    height: 52px;
+}
+
+@media (max-width: 500px) {
+    .actions_variations_grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .action_container {
+        padding: 0 10px;
+    }
+
+    .action_image {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 460px) {
+    .action_image {
+        width: 30px;
+        height: 30px;
+    }
+
+    .actions_variations_grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .action_container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .actions_variations_grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .action_container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .action_container {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .action_container {
+        padding: 0 0px;
+    }
+}
+
+@media (max-width: 370px) {
+    .actions_variations_grid {
+        display: grid;
+        grid-template-areas: 
+            "a11 a12"
+            "a13 a14"
+            "a21 a22"
+            "a23 a24"
+            "a31 a32"
+            "a33 a34"
+            "a41 a42"
+            "a43 a44";
+    }
+
+    .action_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+    }
 }

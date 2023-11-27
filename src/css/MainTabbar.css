@@ -1,3 +1,11 @@
 .tabItem {
     color: red;
 }
+
+.tab_icon {
+    color: white;
+}
+
+.tab_icon-active {
+    color: #C3F29C;
+}

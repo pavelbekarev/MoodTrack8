@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Poppins-Medium';
-    src: url('../fonts/Poppins-Medium.ttf') format("woff2");
+    font-family: 'Montserrat-Medium';
+    src: url('../fonts/Montserrat-Medium.ttf') format("woff2");
     font-weight: normal;
 }
 
@@ -42,7 +42,7 @@
     color: #79AADA;
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Poppins-Medium";
+    font-family: "Montserrat-Medium";
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -57,29 +57,25 @@
 }
 
 .text-chooseEmotion {
-    width: 279px;
     color: #79AADA;
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Poppins-Medium";
-    font-size: 24px;
+    font-family: "Montserrat-Medium";
+    /* font-size: 24px; */
     font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.38px;
 }
 
-.emotions__wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .cell {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    flex-shrink: 0;
 }
 
 .cell_img {
@@ -170,6 +166,9 @@
 .cell20 {
     width: 62px;
 }
+
+
+
 /* 
 .cell23 {
     width: 87px;
@@ -178,6 +177,35 @@
     align-items: center;
 } */
 
-.goNext_button_wrapper {
-    
+@media (max-width: 450px) {
+    .cell_img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 405px) {
+    .cell_img {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 375px) {
+    .cell_img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .calendar {
+        width: 200px;
+        height: 366px;
+    }
+}
+
+@media (max-width: 355px) {
+    .emotionText {
+        font-size: 12px;
+    }
 }

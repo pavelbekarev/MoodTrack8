@@ -183,13 +183,22 @@
 
 .calendar_wrapper {
     display: flex;
+    padding: 4px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 8px;
 }
 
 .emotions_wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+@media (max-width: 375px) {
+    .calendar {
+        width: 300px;
+        height: 320px;
+    }
 }

@@ -1,7 +1,159 @@
+@font-face {
+    font-family: 'Montserrat-SemiBold';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url('../fonts/Montserrat-Light.ttf') format("woff");
+    font-weight: normal;
+}
+
 .result_wrapper {
     display: flex;
     flex-direction: row;
+    margin: 0 auto;
     width: 351px;
-    height: 231px;
     flex-shrink: 0;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    background: var(--light-background-modal-card-background, #FFF);
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.08);
+}
+
+.image_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.emotionImage {
+    width: 47px;
+    height: 47px;
+}
+
+.info_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.text {
+    font-family: "Montserrat-Semibold";
+    color: #79AADA;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.38px;
+}
+
+.date-info {
+    color: #79AADA;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Montserrat-Light";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.emotionType-info {
+    width: 263px;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Montserrat-Semibold";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.38px;
+}
+
+.button_wrapper-finish {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 43px;
+}
+
+.text-info {
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Montserrat-Light";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.emotion-text {
+    width: 254px;
+    color: #79AADA;
+    font-family: 'Montserrat-Light';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
+}
+
+.actions-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.action {
+    width: 23.165px;
+    height: 23.165px;
+    flex-shrink: 0;
+    color: red;
+}
+
+.happy {
+    color: #FDB11C;
+}
+
+.anger {
+    color: #EB3D32;
+}
+
+.sadness {
+    color: #55AAE0;
+}
+
+.surprise {
+    color: #8D4BA2;
+}
+
+.dislike {
+    color: #0DB697;
+}
+
+.save-button {
+    display: flex;
+    width: 290px;
+    height: 44px;
+    padding: 0px 72.5px 0px 71.5px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #79AADA;
+}
+
+.finish_text {
+    width: 270px;
+}
+
+@media (max-width: 410px) {
+    .emotion-text {
+        width: 200px;
+    }
 }

@@ -16,10 +16,12 @@ import "../../css/Emotions.css";
 import { useDispatch } from "react-redux";
 import { DatePanel } from "../../components/DatePanel";
 import { addEmotion } from "../../store/setEmotion";
+import { useSelector } from "react-redux";
 
 const EmotionSurprise = () => {
     const routeNavigator = useRouteNavigator();
     const dispatch = useDispatch();
+    const choosenEmotions = useSelector(state => state.emotion.emotions);
 
     const [isEmotionChoose1, setIsEmotionChoose1] = useState(false);
     const [isEmotionChoose2, setIsEmotionChoose2] = useState(false);
@@ -41,7 +43,7 @@ const EmotionSurprise = () => {
             <Spacing size={77}/>
 
             <Div className="title_text">
-                <span className="text">Давай уточним, что ты еще испытал</span>
+                <span className="text emotions_text">Давай уточним, что ты еще испытал</span>
             </Div>
 
             <Div className="list_wrapper">
@@ -138,20 +140,24 @@ const EmotionSurprise = () => {
                     </CellButton>
                 </Div>
             </Div>
-
-            <Spacing size={50} />
-
-            <Div className="button_wrapper">
-                <CellButton
-                    className="save-button" 
-                    centered
-                    onClick={() => routeNavigator.push(`/emotionIntensivity/:surprise`)}
-                >
-                    Сохранить выбор
-                </CellButton>
-            </Div>
-
             
+            {
+                choosenEmotions.length !== 3 
+                ?
+                <Text className="choose3-text">Выбери до 3</Text>
+                :
+                <Div className="button_wrapper-emotion">
+                    <CellButton
+                        className="save-button" 
+                        centered
+                        onClick={() => {
+                            routeNavigator.push(`/emotionIntensivity/:surprise`);
+                        }}
+                    >
+                        Продолжить
+                    </CellButton>
+                </Div>
+            }
         </Panel>
     );
 }

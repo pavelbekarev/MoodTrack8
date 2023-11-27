@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Poppins-Semibold';
-    src: url('../fonts/Poppins-SemiBold.ttf') format("woff2");
+    font-family: 'Montserrat-SemiBold';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format("woff2");
     font-weight: normal;
 }
 
@@ -17,20 +17,41 @@
 }
 
 .text {
-    width: 287px;
-    background: rgba(121, 170, 218, 1);
-    background-image: rgb(121,170,218);
+    /* background: rgba(121, 170, 218, 1); */
+    /* background-image: rgb(121,170,218); */
     background: linear-gradient(90deg, rgba(121,170,218,1) 11%, rgba(195,242,156,1) 96%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Poppins-Semibold";
+    font-family: "Montserrat-SemiBold";
     font-size: 26px;
     font-style: normal;
     font-weight: 600;
     line-height: 24px; /* 120% */
     letter-spacing: 0.38px;
+}
+
+.intensivity_text {
+    width: 205px;
+}
+
+.emotions_text {
+    width: 287px;
+}
+
+.choose3-text {
+    margin-top: 39px;
+    text-align: center;
+    font-family: "Montserrat-Semibold";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 120% */
+    letter-spacing: 0.38px;
+    background: linear-gradient(90deg, rgba(121,170,218,1) 11%, rgba(195,242,156,1) 96%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .list_wrapper {
@@ -62,7 +83,6 @@
 
 .cellbutton_wrapper-active {
     display: flex;
-    /* width: 167px; */
     height: 36px;
     padding: 0px 25px 0px 26px;
     justify-content: center;
@@ -119,11 +139,13 @@
     gap: 8px;
 }
 
-.button_wrapper {
+.button_wrapper-emotion {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 28px;
 }
 
 .save-button {
@@ -136,4 +158,22 @@
     flex-shrink: 0;
     border-radius: 10px;
     border: 1px solid #79AADA;
+}
+
+@media (max-width: 400px) {
+    .slider_wrapper {
+        width: 250px;
+    }
+}
+
+@media (max-width: 375px) {
+    .cellbutton_wrapper, .cellbutton_wrapper-active {
+        padding: 0px 10px 0px 11px;
+    }
+}
+
+@media (max-width: 350px) {
+    .cellbuttons_row {
+        gap: 10px;
+    }
 }

@@ -16,6 +16,7 @@ import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import "../css/Emotions.css";
 import "../css/EmotionPage.css";
 import { DatePanel } from "../components/DatePanel";
+import { useDispatch } from "react-redux";
 
 import { useSelector } from "react-redux";
 import { useParams } from "@vkontakte/vk-mini-apps-router";
@@ -24,6 +25,7 @@ import frame20 from "../img/Frame 20.svg";
 import frame21 from "../img/Frame 21.svg";
 import frame22 from "../img/Frame 22.svg";
 import frame23 from "../img/Frame 23.svg";
+import { setSliderValue } from "../store/setEmotion";
 
 
 
@@ -33,7 +35,11 @@ const EmotionIntensivity = () => {
     const params = useParams();
     const [image, setImage] = useState();
     const [valueStep, setValueStep] = useState(1);
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        dispatch(setSliderValue(valueStep))
+    }, [valueStep])
     
     useEffect(() => {
         if (params.emotionType === ':anger'){
@@ -65,7 +71,7 @@ const EmotionIntensivity = () => {
             <Spacing size={20} />
 
             <Div className="title_text">
-                <Text className="text">Насколько интенсивной была эта эмоция?</Text>
+                <Text className="text intensivity_text">Насколько интенсивной была эта эмоция?</Text>
             </Div>
             
             <Spacing size={100} />

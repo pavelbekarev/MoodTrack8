@@ -16,10 +16,12 @@ import "../../css/Emotions.css";
 import { useDispatch } from "react-redux";
 import { DatePanel } from "../../components/DatePanel";
 import { addEmotion } from "../../store/setEmotion";
+import { useSelector } from "react-redux";
 
 const EmotionSadness = () => {
     const routeNavigator = useRouteNavigator();
     const dispatch = useDispatch();
+    const choosenEmotions = useSelector(state => state.emotion.emotions);
 
     const [isEmotionChoose1, setIsEmotionChoose1] = useState(false);
     const [isEmotionChoose2, setIsEmotionChoose2] = useState(false);
@@ -30,9 +32,6 @@ const EmotionSadness = () => {
     const [isEmotionChoose7, setIsEmotionChoose7] = useState(false);
     const [isEmotionChoose8, setIsEmotionChoose8] = useState(false);
 
-
-    let cellbutton = document.getElementById("cellbutton");
-
     return (
         <Panel>
             <HeaderPanel />
@@ -41,7 +40,7 @@ const EmotionSadness = () => {
             <Spacing size={77}/>
 
             <Div className="title_text">
-                <span className="text">Давай уточним, что ты еще испытал</span>
+                <span className="text emotions_text">Давай уточним, что ты еще испытал</span>
             </Div>
 
             <Div className="list_wrapper">
@@ -139,19 +138,23 @@ const EmotionSadness = () => {
                 </Div>
             </Div>
 
-            <Spacing size={50} />
-
-            <Div className="button_wrapper">
-                <CellButton
-                    className="save-button" 
-                    centered
-                    onClick={() => routeNavigator.push(`/emotionIntensivity/:sadness`)}
-                >
-                    Сохранить выбор
-                </CellButton>
-            </Div>
-
-            
+            {
+                choosenEmotions.length !== 3 
+                ?
+                <Text className="choose3-text">Выбери до 3</Text>
+                :
+                <Div className="button_wrapper-emotion">
+                    <CellButton
+                        className="save-button" 
+                        centered
+                        onClick={() => {
+                            routeNavigator.push(`/emotionIntensivity/:sadness`);
+                        }}
+                    >
+                        Продолжить
+                    </CellButton>
+                </Div>
+            }
         </Panel>
     );
 }
