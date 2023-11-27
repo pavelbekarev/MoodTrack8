@@ -79,7 +79,7 @@ const ArticlePage = () => {
             before={<Icon28ErrorCircleOutline fill="var(--vkui--color_icon_negative)" />}
         >
             Не удалось применить изменения
-        </Snackbar>,
+        </Snackbar>
         );
     }
 
