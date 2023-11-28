@@ -1,0 +1,4 @@
+{
+    "serverPort" : 5000,
+    "dbUrl": "mongodb+srv://bekarevps:8aBP71Y8GOMeMozh@moodtrack-cloud.ylvf1sy.mongodb.net/?retryWrites=true&w=majority"
+}
