@@ -3,12 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 const setEmotion = createSlice({
     name: "emotion",
     initialState: {
-        actions: [],
-        emotions: [],
-        emotionImage: "",
-        sliderValue: 0,
-        date: "",
-        emotionText: ""
+        actions: [],        // * \\
+        emotions: [],       // * \\
+        emotionImage: "",   // * \\
+        sliderValue: 0,     // * \\
+        date: "",           // * \\
+        emotionText: "",     // * \\
+        users: [],
+        notes: [],
+        emotionType: ""
     },
     reducers: {
         addEmotion(state, action) {
@@ -28,12 +31,15 @@ const setEmotion = createSlice({
         },
 
         clearData(state, action) {
-            state.actions = [];
-            state.emotions = [];
-            state.emotionImage = "";
-            state.sliderValue = 0;
-            state.date = "";
-            state.emotionText = "";
+            state.actions = [];       
+            state.emotions = [];      
+            state.emotionImage = "";  
+            state.sliderValue = 0;    
+            state.date = "";          
+            state.emotionText = "";  
+            state.users = [];
+            state.notes = [];
+            state.emotionType = "";
         },
 
         addAction(state, action) {
@@ -65,10 +71,22 @@ const setEmotion = createSlice({
         },
         
         deleteEmotion(state, action) {
-            state.emotions.remove(action.payload)
+            state.emotions.remove(action.payload);
+        },
+
+        setUsers(state, action) {
+            state.users = action.payload;
+        },
+
+        setNotes(state, action) {
+            state.notes = action.payload;
+        },
+
+        setEmotionType(state, action) {
+            state.emotionType = action.payload;
         }
     }
 })
 
-export const {addEmotion, setAction, addAction, setEmotionImage, clearData, setSliderValue, setDate, setEmotionText, deleteEmotion } = setEmotion.actions;
+export const {addEmotion, setEmotionType, setNotes, setAction, addAction, setEmotionImage, clearData, setSliderValue, setUsers, setDate, setEmotionText, deleteEmotion } = setEmotion.actions;
 export default setEmotion.reducer; 

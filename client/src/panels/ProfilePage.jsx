@@ -23,11 +23,34 @@ import HeaderPanel from "../components/HeaderPanel";
 
 export default function ProfilePage() {
     const [fetchedUser, setUser] = useState(null);
+    const [userId, setUserId] = useState(null);
 
     useEffect(() => {
         async function fetchData() {
             const user = await bridge.send('VKWebAppGetUserInfo');
             setUser(user);
+            setUserId(bridge.send(() => {
+                bridge.subscribe(event => {
+                    if (!event.detail) {
+                      return;
+                    }
+                
+                    switch(event.detail.type) {
+                      case 'VKWebAppOpenCodeReaderResult':
+                        if (event.detail.data.result) {
+                          // Обработка события в случае успеха
+                          console.log(event.detail.data.result);
+                        } else {
+                          // Ошибка
+                        }
+                        break;
+                      case 'VKWebAppOpenCodeReaderFailed':
+                        // Обработка события в случае ошибки
+                        console.log(event.detail.data.error_type, event.detail.data.error_data);      
+                        break;
+                    }
+                });
+            }))
         }
 
         fetchData();
