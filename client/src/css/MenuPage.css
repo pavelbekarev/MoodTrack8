@@ -1,12 +1,15 @@
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url('../fonts/Montserrat-Light.ttf') format("woff");
+    font-weight: normal;
+}
+
 .card_wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 10px;
     margin: 0 auto;
-}
-
-.card {
 }
 
 .cardGrid {
@@ -21,6 +24,16 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(121, 170, 218, 0.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #FAFAFB;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: "Montserrat-Light";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px; /* 171.429% */
+    letter-spacing: 0.38px;
 }
 
 .cardContent_wrapper {

@@ -33,6 +33,18 @@ class NoteController {
             res.send({message: "Server error"});
         }
     }
+
+
+    async getBestDay(req, res) {
+        try {
+            const candidateNote = await Note.find().json();
+            console.log(candidateNote);
+        }
+
+        catch (e) {
+
+        }
+    }
 }
 
 

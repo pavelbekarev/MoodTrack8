@@ -17,6 +17,7 @@
     width: 351px;
     flex-shrink: 0;
     border-radius: 10px;
+    
     margin-top: 40px;
     margin-bottom: 70px;
     background: var(--light-background-modal-card-background, #FFF);
@@ -65,7 +66,7 @@
 }
 
 .emotionType-info {
-    width: 263px;
+    /* width: 263px; */
     font-feature-settings: 'clig' off, 'liga' off;
     font-family: "Montserrat-Semibold";
     font-size: 15px;
@@ -140,7 +141,7 @@
     display: flex;
     width: 290px;
     height: 44px;
-    padding: 0px 72.5px 0px 71.5px;
+    padding: 0px 60px 0px 60px;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -155,5 +156,17 @@
 @media (max-width: 410px) {
     .emotion-text {
         width: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .result_wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 365px) {
+    .result_wrapper {
+        width: 85%;
     }
 }

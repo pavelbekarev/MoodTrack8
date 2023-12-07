@@ -7,11 +7,10 @@ const setEmotion = createSlice({
         emotions: [],       // * \\
         emotionImage: "",   // * \\
         sliderValue: 0,     // * \\
-        date: "",           // * \\
+        date: " ",           // * \\
         emotionText: "",     // * \\
         users: [],
-        notes: [],
-        emotionType: ""
+        notes: [" "]
     },
     reducers: {
         addEmotion(state, action) {
@@ -39,7 +38,6 @@ const setEmotion = createSlice({
             state.emotionText = "";  
             state.users = [];
             state.notes = [];
-            state.emotionType = "";
         },
 
         addAction(state, action) {
@@ -80,13 +78,9 @@ const setEmotion = createSlice({
 
         setNotes(state, action) {
             state.notes = action.payload;
-        },
-
-        setEmotionType(state, action) {
-            state.emotionType = action.payload;
         }
     }
 })
 
-export const {addEmotion, setEmotionType, setNotes, setAction, addAction, setEmotionImage, clearData, setSliderValue, setUsers, setDate, setEmotionText, deleteEmotion } = setEmotion.actions;
+export const {addEmotion, setNotes, setAction, addAction, setEmotionImage, clearData, setSliderValue, setUsers, setDate, setEmotionText, deleteEmotion } = setEmotion.actions;
 export default setEmotion.reducer; 

@@ -15,11 +15,11 @@ import HeaderPanel from "../components/HeaderPanel";
 import "../css/ArticlePage.css"
 import { Icon24CheckCircleOn } from "@vkontakte/icons";
 import { useSelector } from "react-redux";
-import frame20 from "../img/Frame 20.svg";
-import frame21 from "../img/Frame 21.svg";
-import frame22 from "../img/Frame 22.svg";
-import frame23 from "../img/Frame 23.svg";
-import frame24 from "../img/Frame 24.svg";
+import frame20 from "../img/Frame20.svg";
+import frame21 from "../img/Frame21.svg";
+import frame22 from "../img/Frame22.svg";
+import frame23 from "../img/Frame23.svg";
+import frame24 from "../img/Frame24.svg";
 import { useEffect } from "react";
 import _ from "lodash";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
@@ -83,7 +83,6 @@ const ArticlePage = () => {
         );
     }
 
-
     const setArticle = () => {
         if (type === null) return;
         const articles = require("../store/data.json").filter((item) => (item.type === type));
@@ -96,8 +95,6 @@ const ArticlePage = () => {
             let b = setArticle();
             setShowSnackbar(true);
 
-            
-
             if (a.header !== b.header) {
                 setHeaderText(a.header); 
                 setSubtitle(a.subtitle);
@@ -106,6 +103,16 @@ const ArticlePage = () => {
                 setHeaderText2(b.header); 
                 setSubtitle2(b.subtitle);
                 setArticleUrl2(b.url);
+            }
+
+            else {
+                setHeaderText(a.header); 
+                setSubtitle(a.subtitle);
+                setArticleUrl(a.url);
+
+                setHeaderText2(setArticle().header); 
+                setSubtitle2(setArticle().subtitle);
+                setArticleUrl2(setArticle().url);
             }
         }
     }, [activePanel])
@@ -135,23 +142,13 @@ const ArticlePage = () => {
 
             {/* {activePanel === "articlePage_panel" ? () => {let a = setArticle(); setHeaderText(a.header); setSubtitle(a.subtitle)} : ""} */}
 
-            <Group className="banner_wrapper">
+            <Div className="banner_wrapper">
                 <Banner 
                     className="banner" 
                     header={headerText}
                     subheader={subtitle}
                     asideMode="dismiss" 
                     actions={
-                        // <Button
-                        //     className="banner-button"
-                        //     mode="link"
-                        //     onClick={() => {
-                        //         <Link />
-                        //     }}
-                        // >
-                        //     Перейти
-                        // </Button>
-                        
                         <Div 
                             className="goByLink_button-wrapper"
                         >
@@ -171,16 +168,6 @@ const ArticlePage = () => {
                     subheader={subtitle2}
                     asideMode="dismiss" 
                     actions={
-                        // <Button
-                        //     className="banner-button"
-                        //     mode="link"
-                        //     onClick={() => {
-                        //         <Link />
-                        //     }}
-                        // >
-                        //     Перейти
-                        // </Button>
-                        
                         <Div 
                             className="goByLink_button-wrapper"
                         >
@@ -192,10 +179,9 @@ const ArticlePage = () => {
                                 Перейти
                             </a>
                         </Div>
-                        
                     }
                 />
-            </Group>
+            </Div>
 
             {/* <Spacing size={63} /> */}
 

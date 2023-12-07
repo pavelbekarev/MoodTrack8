@@ -52,52 +52,37 @@ const CalendarPage = (props) => {
     function checkDate() {
         if (dateYear === currentYear) 
         {
-            if (dateMonth === currentMonth) 
-            {
-                if (dateDay === currentDay) 
-                {
-                    isEven = true;
-                    return;
-                }
-            }
-
             if (dateMonth > currentMonth) 
             {
-                moreDate = true;
-                return moreDate;
+                return true;
             }
 
             if (dateMonth === currentMonth) 
             {
                 if (dateDay > currentDay) 
                 {
-                    moreDate = true;
-                    return moreDate;
-                }
-
-                else 
-                {
-                    lessDate = true;
                     return false;
                 }
-            }
-            
-            else 
-            {
-                lessDate = true;
-                return false;
+
+                if (dateDay === currentDay) 
+                {
+                    return true;
+                }
+
+                if (dateDay < currentDay) 
+                {
+                    return false;
+                }
             }
         }
 
         if (dateYear > currentYear) 
         {
-            moreDate = true;
-            return moreDate;
+            return true;
         } 
 
         if (dateYear < currentYear) 
         {
-            lessDate = true;
             return false;
         }
     }
@@ -116,9 +101,9 @@ const CalendarPage = (props) => {
                                     value={dateValue} 
                                     onChange={setDateValue}
                                     onClick={() => {
-                                        checkDate()
-                                        &&
-                                        changeActiveModal("EMOTIONS_MODAL_PAGE")
+                                        if (checkDate()) {
+                                            changeActiveModal("EMOTIONS_MODAL_PAGE")
+                                        }
                                     }}
                                 />
                             </LocaleProvider>

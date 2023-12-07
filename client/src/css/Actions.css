@@ -236,7 +236,8 @@
     .action_container {
         display: flex;
         flex-direction: column;
-        justify-content: stretch;
+        justify-content: center;
         align-items: center;
+        padding: 5px 15px
     }
 }

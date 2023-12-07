@@ -5,8 +5,8 @@
 }
 
 @font-face {
-    font-family: 'Poppins-Semibold';
-    src: url('../fonts/Poppins-SemiBold.ttf') format("woff2");
+    font-family: 'Montserrat-SemiBold';
+    src: url('../fonts/Montserrat-SemiBold.ttf') format("woff2");
     font-weight: normal;
 }
 
@@ -74,14 +74,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     flex-shrink: 0;
+    /* width: 51px;
+    height: 51px; */
 }
 
 .cell_img {
     width: 51px;
     height: 51px;
     flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cell_img20 {
+    background-image: url("../img/Frame20.svg");
+}
+
+.cell_img21 {
+    background-image: url("../img/Frame21.svg");
+}
+
+.cell_img22 {
+    background-image: url("../img/Frame22.svg");
+}
+
+.cell_img23 {
+    background-image: url("../img/Frame23.svg");
+}
+
+.cell_img24 {
+    background-image: url("../img/Frame24.svg");
+}
+
+.emotionText {
+    font-family: 'Montserrat-SemiBold';
 }
 
 .emotionText20 {
@@ -90,7 +117,6 @@
     
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Poppins;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -106,7 +132,6 @@
     
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: Poppins;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -121,7 +146,6 @@
     
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Poppins-Semibold";
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -136,7 +160,6 @@
     
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Poppins-Semibold";
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -155,7 +178,6 @@
     
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    font-family: "Poppins-Semibold";
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
@@ -181,6 +203,7 @@
     .cell_img {
         width: 45px;
         height: 45px;
+        font-size: 12px;
     }
 }
 
@@ -192,11 +215,15 @@
 
 }
 
-@media (max-width: 375px) {
+@media (max-width: 390px) {
     .cell_img {
         width: 35px;
         height: 35px;
     }
+
+    .emotionText {
+        font-size: 12px;
+    }   
 
     .calendar {
         width: 200px;
@@ -207,5 +234,16 @@
 @media (max-width: 355px) {
     .emotionText {
         font-size: 12px;
+    }
+}
+
+@media (max-width: 350px) {
+    .cell_img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .emotionText {
+        font-size: 9px;
     }
 }

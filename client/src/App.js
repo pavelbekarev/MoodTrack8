@@ -14,7 +14,8 @@ import {
 	Cell,
 	ModalPageHeader,
 	ModalCard,
-	Text
+	Text,
+	Image
 
 } from '@vkontakte/vkui';
 
@@ -37,11 +38,11 @@ import EmotionIntensivity from './panels/EmotionIntensivity';
 import EmotionIntensivityVertical from './panels/EmotionIntensivityVertical';
 import { Actions } from './panels/Actions';
 
-import frame20 from "./img/Frame 20.svg";
-import frame21 from "./img/Frame 21.svg";
-import frame22 from "./img/Frame 22.svg";
-import frame23 from "./img/Frame 23.svg";
-import frame24 from "./img/Frame 24.svg";
+import frame20 from "./img/Frame20.svg";
+import frame21 from "./img/Frame21.svg";
+import frame22 from "./img/Frame22.svg";
+import frame23 from "./img/Frame23.svg";
+import frame24 from "./img/Frame24.svg";
 
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import EmotionDescription from './panels/EmotionDescription';
@@ -140,7 +141,8 @@ const App = () => {
 						}}
                     >
 						<div className='cell'>
-							<img className="cell_img" src={frame20} alt="" />
+							{/* <Image className="cell_img" src={frame20} alt="" /> */}
+							<div className='cell_img20 cell_img'></div>
 							{frame20Flag && <span className="emotionText emotionText20">Радость</span>}
 						</div>
                         
@@ -158,7 +160,8 @@ const App = () => {
 						}}
                     >
                         <div className='cell'>
-							<img className="cell_img" src={frame24} alt="" />
+							{/* <img className="cell_img" src={frame24} alt="" /> */}
+							<div className='cell_img24 cell_img'></div>
 							{frame24Flag && <span className="emotionText emotionText24">Злость</span>}
 						</div>
                     </Cell>
@@ -175,7 +178,8 @@ const App = () => {
 						}}
                     >
                         <div className="cell">
-                            <img className="cell_img" src={frame21} alt="" />
+                            {/* <img className="cell_img" src={frame21} alt="" /> */}
+							<div className='cell_img21 cell_img'></div>
 							{frame21Flag && <span className="emotionText emotionText21">Грусть</span>}
                         </div>
                     </Cell>
@@ -192,7 +196,8 @@ const App = () => {
 						}}
                     >
                         <div className="cell">
-                            <img className="cell_img" src={frame22} alt="" />
+                            {/* <img className="cell_img" src={frame22} alt="" /> */}
+							<div className='cell_img22 cell_img'></div>
 							{frame22Flag && <span className="emotionText emotionText22">Удивление</span>}
                         </div>
                     </Cell>
@@ -209,7 +214,8 @@ const App = () => {
 						}}
                     >
                         <div className="cell">
-                            <img className="cell_img" src={frame23} alt="" />
+                            {/* <img className="cell_img" src={frame23} alt="" /> */}
+							<div className='cell_img23 cell_img'></div>
 							{frame23Flag && <span className="emotionText emotionText23">Неприязнь</span>}
                         </div>
                     </Cell>

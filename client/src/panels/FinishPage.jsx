@@ -11,15 +11,16 @@ import HeaderPanel from "../components/HeaderPanel";
 import { DatePanel } from "../components/DatePanel";
 import "../css/FinishPage.css";
 import { useSelector, useDispatch } from "react-redux";
-import frame20 from "../img/Frame 20.svg";
-import frame21 from "../img/Frame 21.svg";
-import frame22 from "../img/Frame 22.svg";
-import frame23 from "../img/Frame 23.svg";
-import frame24 from "../img/Frame 24.svg";
+import frame20 from "../img/Frame20.svg";
+import frame21 from "../img/Frame21.svg";
+import frame22 from "../img/Frame22.svg";
+import frame23 from "../img/Frame23.svg";
+import frame24 from "../img/Frame24.svg";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import { getSets } from "../actions/user";
 import { useForm } from "react-hook-form";
 import { getNotes } from "../actions/note";
+
 
 const FinishPage = () => {  
     let styleCss = "";
@@ -68,29 +69,6 @@ const FinishPage = () => {
         styleCss = "dislike";
     }
 
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getSets()),
-        dispatch(getNotes());
-        dispatch(setEmotionType(emotionType))
-    }, [dispatch, emotionType])
-
-    // const users = useSelector(state => state.emotion.users)
-    //                 .map(user => <Text>{`${user.firstname}, ${user.lastname}`}</Text>);
-
-    
-    // const notes = useSelector(state => state.emotion.notes)
-    //                 .map(note => 
-    //                     // <Text>Дата: {note.date_value}</Text>
-    //                     // <Text>Эмоция: {note.emotion_name}</Text>    
-    //                     // <Text>{note.emotions}</Text>
-    //                     // <Text>Действия: {note.actions}</Text>
-    //                     // <Text>интенсивность эмоции: {note.intensivity_name}</Text>;
-    //                     // <Text>Мысли: {note.thoughts_name}</Text>
-    //                 // }
-    //                 )
-
 
     const onSubmit = async () => {
         try {
@@ -99,7 +77,7 @@ const FinishPage = () => {
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
-                    },
+                    },  
                     method: "POST", 
                     body: JSON.stringify({
                         date_value: date, 

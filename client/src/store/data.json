@@ -1,34 +1,29 @@
 [
     {
-        "id": 1,
         "type": "anger",
         "url": "https://www.psychologies.ru/wellbeing/meditaciya-3-tekhniki-kotorye-ispolzuyut-psikhologi/",
         "header": "Медитация: 3 техники,",
         "subtitle": "которые используют психологи"
     },
     {
-        "id": 2,
         "type": "anger",
         "url": "https://www.psychologies.ru/standpoint/41-net-kotoroe-sdelaet-vas-schastlivee/",
         "header": "41 «нет»,",
         "subtitle": "которое сделает вас счастливее"
     },
     {
-        "id": 3,
         "type": "anger",
         "url": "https://www.psychologies.ru/articles/18-priznakov-togo-chto-vyi-vyisokochuvstvitelnyiy-chelovek/",
         "header": "18 признаков того, что",
         "subtitle": "вы высокочувствительный человек"
     },
     {
-        "id": 4,
         "type": "anger",
         "url": "https://www.psychologies.ru/articles/10-sposobov-spravitsya-s-trevojnostyu/",
         "header": "10 способов",
         "subtitle": "справиться с тревожностью"
     },
     {
-        "id": 5,
         "type": "surprise",
         "url": "https://www.psychologies.ru/articles/neiroset-vs-trevoga-3-prostykh-uprazhneniya-kotorye-pomogut-spravitsya-so-stressom/",
         "header": "Нейросеть vs тревога:",
@@ -36,7 +31,6 @@
     }
     ,
     {
-        "id": 6,
         "type": "surprise",
         "url": "https://www.psychologies.ru/articles/ekspress-test-ot-psikhiatra-kotoryi-opredelit-vash-uroven-trevozhnosti/?utm_source=facebook.com",
         "header": "Экспресс-тест от психиатра,",
@@ -44,7 +38,6 @@
     }
     ,
     {
-        "id": 7,
         "type": "surprise",
         "url": "https://www.psychologies.ru/articles/sila-slov-pochemu-nado-govorit-o-svoih-chuvstvah/",
         "header": "Сила слов:",
@@ -52,7 +45,6 @@
     }
     ,
     {
-        "id": 8,
         "type": "surprise",
         "url": "https://www.psychologies.ru/wellbeing/meditaciya-3-tekhniki-kotorye-ispolzuyut-psikhologi/",
         "header": "Медитация:",

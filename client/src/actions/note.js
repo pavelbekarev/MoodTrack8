@@ -9,7 +9,7 @@ function getNotes() {
         }
 
         catch (e) {
-            console.log(e.response.data.message)
+            console.log("error")
         }
     }
 }

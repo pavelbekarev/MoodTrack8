@@ -16,11 +16,11 @@ import { Icon24ChevronCompactRight } from "@vkontakte/icons";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import { useDispatch } from "react-redux";
 
-import frame24 from "../img/Frame 24.svg";
-import frame20 from "../img/Frame 20.svg";
-import frame21 from "../img/Frame 21.svg";
-import frame22 from "../img/Frame 22.svg";
-import frame23 from "../img/Frame 23.svg";
+import frame24 from "../img/Frame24.svg";
+import frame20 from "../img/Frame20.svg";
+import frame21 from "../img/Frame21.svg";
+import frame22 from "../img/Frame22.svg";
+import frame23 from "../img/Frame23.svg";
 
 import "../css/EmotionDescription.css";
 import { setEmotionText } from "../store/setEmotion";
