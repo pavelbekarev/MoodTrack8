@@ -2,8 +2,9 @@ const Note = require("../models/Note");
 
 class NoteController {
     async createNote(req, res) {
-        try {
+        // try {
             const note = new Note({
+                // user_id:            req.body.user_id,
                 date_value:         req.body.date_value, 
                 emotion_name:       req.body.emotion_name, 
                 emotions:           req.body.emotions,
@@ -14,11 +15,12 @@ class NoteController {
 
             await note.save();
             return res.status(200).json({message: `Note was created`});
-        }
+        // }
 
 
-        catch (e) {
-        }
+        // catch (e) {
+        //     console.log("Server error")
+        // }
     }
 
 

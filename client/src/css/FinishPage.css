@@ -119,10 +119,12 @@
 
 .happy {
     color: #FDB11C;
+    fill: #FDB11C;
 }
 
 .anger {
     color: #EB3D32;
+    
 }
 
 .sadness {

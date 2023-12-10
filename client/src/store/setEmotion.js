@@ -10,7 +10,9 @@ const setEmotion = createSlice({
         date: " ",           // * \\
         emotionText: "",     // * \\
         users: [],
-        notes: [" "]
+        notes: [" "],
+        userId: 0
+
     },
     reducers: {
         addEmotion(state, action) {

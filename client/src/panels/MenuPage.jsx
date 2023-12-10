@@ -33,47 +33,48 @@ const MenuPage = () => {
     const [bestNote, setBestNote] = useState();
 
     const [emotions, setEmotions] = useState([]);
-    const [emotionImage, setEmotionImage] = useState("");
+    // const [emotionImage, setEmotionImage] = useState();
+    const [emotionType, setEmotionType] = useState("");
     const [sliderValue, setSliderValue] = useState(0);
     const [date, setDate] = useState("");
     const [actions, setActions] = useState([]);
     const [emotionText, setEmotionText]= useState("")
+    const [intensivity_name, setIntensivityName] = useState("");
+    let emotionImage = "";
+    // const [notes, setNotes] = useState([]);
 
     // const [best, setBest] = useState([]);
-    const notes = useSelector(state => state.emotion.notes);
+    // const notes = JSON.stringify(useSelector(state => state.emotion.notes));
 
     
-    const best = notes.map(note => note.intensivity_name === "очень сильно" ? 
-                        {date_value: note.date_value, 
-                        emotion_name: note.emotionType, 
-                        emotions: note.emotions,
-                        action_name: note.action_name, 
-                        intensivity_name: note.intensivity_name, 
-                        thoughts_name: note.thoughts_name}
-        : null
-    )
+    // const best = notes.map(note => note.intensivity_name === ("очень сильно" + " ") ? 
+    //                     {date_value: note.date_value, 
+    //                     emotion_name: note.emotionType, 
+    //                     emotions: note.emotions,
+    //                     action_name: note.action_name, 
+    //                     intensivity_name: note.intensivity_name, 
+    //                     thoughts_name: note.thoughts_name}
+    //     : null
+    // )
 
-    const getBest = () => {
-        if (null) {
-            return ;
-        }
-
-        const list = best.filter(item => item !== null)
-        
-
-        return JSON.stringify(_.sample(list));
-
-    }
-
-    const asd = getBest();
+    // const best = notes.map(note => note.intensivity_name === ("очень сильно" + " ") ? 
+    //                     (setDate(note.date_value),
+    //                     setEmotionType(note.emotionType),
+    //                     setEmotions(note.emotions),
+    //                     setActions(note.action_name), 
+    //                     setIntensivityName(note.intensivity_name), 
+    //                     setEmotionText(note.thoughts_name))
+    //     : null
+    // )
 
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getNotes());
-        setBestNote(getBest())
+        // setBestNote(getBest())
+        // setNotes(useSelector(state => state.emotion.notes))
 
-    }, [dispatch])
+    }, [])
 
 
     const emotionIntensivityList = {
@@ -85,37 +86,134 @@ const MenuPage = () => {
         5: "очень сильно"
     }
 
-    let emotionType = "";
-    if (emotionImage === frame20) {
-        emotionType = "Счастье";
-        styleCss = "happy";
-    }
 
-    if (emotionImage === frame24) {
-        emotionType = "Агрессия";
-        styleCss = "anger";
-    }
+    const notes = useSelector(state => state.emotion.notes);    
 
-    if (emotionImage === frame21) {
-        emotionType = "Грусть";
-        styleCss = "sadness";
-    }
+    // let emotionType = "";
+    // if (emotionImage === frame20) {
+    //     emotionType = "Счастье";
+    //     styleCss = "happy";
+    // }
 
-    if (emotionImage === frame22) {
-        emotionType = "Удивление";
-        styleCss = "surprise";
-    }
+    // if (emotionImage === frame24) {
+    //     emotionType = "Агрессия";
+    //     styleCss = "anger";
+    // }
 
-    if (emotionImage === frame23) {
-        emotionType = "Неприязнь";
-        styleCss = "dislike";
-    }
+    // if (emotionImage === frame21) {
+    //     emotionType = "Грусть";
+    //     styleCss = "sadness";
+    // }
 
-    const setNote = () => {
-        const noteList = (notes.map(note => note.intensivity_name === "очень сильно") + "").filter((item) => (item === true));
-        // const note = noteList.filter((item) => (item === true));
-        return _.sample(noteList);
+    // if (emotionImage === frame22) {
+    //     emotionType = "Удивление";
+    //     styleCss = "surprise";
+    // }
+
+    // if (emotionImage === frame23) {
+    //     emotionType = "Неприязнь";
+    //     styleCss = "dislike";
+    // }
+
+
+    // const asd = getBest();
+
+    // const dsa = () => {
+    //     let asd = (note => 
+    //         {(note.intensivity_name === "умеренно") &&
+                
+    //             setDate(note.date_value),
+    //             setEmotionType(note.emotionType),
+    //             setEmotions(note.emotions),
+    //             setActions(note.action_name), 
+    //             setIntensivityName(note.intensivity_name), 
+    //             setEmotionText(note.thoughts_name)
+    //     })
+
+    //     return asd;
+    // }
+
+
+    const cars = [
+        { make: 'Toyota', model: 'Camry', year: 2018 },
+        { make: 'Honda', model: 'Accord', year: 2019 },
+        { make: 'Tesla', model: 'Model S', year: 2020 },
+    ];
+    
+    const car = cars.find(function (item) {
+        return item.make === 'Honda';
+    });
+    
+    // console.log(car);
+
+
+    // const best = notes.map(function (item) {
+    //     const bestList = [];
+
+    //     if ((item.emotion_name === "Счастье") && (item.intensivity_name === "очень сильно"))
+    //     {
+    //         return item;
+    //     }
+
+    //     else {
+    //         return false;
+    //     }
+    // }
+    // );
+
+    // console.log(_.sample(best));
+
+    // if (best.emotion_name === "happy") {
+    //     emotionImage = frame20;
+    // }
+
+    // if (best.emotion_name === "anger") {
+    //     emotionImage = frame24;
+    // }
+
+    // if (best.emotion_name === "sadness") {
+    //     emotionImage = frame21;
+    // }
+
+    // if (best.emotion_name === "surprise") {
+    //     emotionImage = frame22;
+    // }
+
+    // if (best.emotion_name === "dislike") {
+    //     emotionImage = frame23;
+    // }
+
+    // console.log(best);
+
+    // let newList = best.filter(item => item !== false)
+    // // console.log(newList)
+
+    // // console.log(_.sample(newList))
+
+    // const candidateNote = _.sample(newList);
+    // console.log(candidateNote);
+
+
+    const best = notes.map(function (item) {
+        const bestList = [];
+
+        if ((item.emotion_name === "Счастье") && (item.intensivity_name === "очень сильно"))
+        {
+            bestList.push(item);
+        }
+
+        else {
+            return false;   
+        }
+
+        return bestList;
     }
+    );
+
+    // console.log(best.filter(item => item !== false));
+    let newList = best.filter(item => item !== false);
+    const candidateNote = _.sample(newList);
+    console.log(candidateNote);
 
     return (
         <Panel>
@@ -123,41 +221,49 @@ const MenuPage = () => {
             <DatePanel />
             <Spacing size={40} />
 
-
-            <Group 
-                className="card_wrapper"
-                mode="plain" 
-                header={<Header className="cardHeader">Самый лучший день - {date}</Header>}
-            >
-                <CardGrid className="cardGrid" size="l">
-                    <Card className="card" mode="shadow">
-                        <Div className="cardContent_wrapper">
-                            <Div className="image_wrapper">
-                                <img className="emotionImage" src={emotionImage} alt="" />
+            <Div>
+                <Group 
+                    className="card_wrapper"
+                    mode="plain" 
+                    // header={<Header className="cardHeader">Самый лучший день - {candidateNote.date_value}</Header>}
+                >
+                    <CardGrid className="cardGrid" size="l">
+                        <Card className="card" mode="shadow">
+                            <Div className="cardContent_wrapper">
+                                <Div className="image_wrapper">
+                                    <img className="emotionImage" src={emotionImage} alt="" />
+                                </Div>
+                                <Div className="info_wrapper">
+                                    {/* <Text className={`emotionType-info ${styleCss}`} >{`${candidateNote.emotion_name}, интенсивность: ${candidateNote.intensivity_name}`}</Text>
+                                    <Text className={`text-info ${styleCss}`}>{emotions.map(e => `${e}`)}</Text>
+                                    <Text className={`actions-info ${styleCss}`} >{actions}</Text>
+                                    <Text className={`emotion-text ${styleCss}`} >{candidateNote.thoughts_name}</Text> */}
+                                </Div>
                             </Div>
-                            <Div className="info_wrapper">
-                                <Text className={`date-info`} >{`Сегодня, ${date}`}</Text>
-                                <Text className={`emotionType-info ${styleCss}`} >{`${emotionType}, интенсивность: ${emotionIntensivityList[sliderValue]}`}</Text>
-                                <Text className={`text-info ${styleCss}`}>{emotions.map(e => `${e}`)}</Text>
-                                <Text className={`actions-info ${styleCss}`} >{actions}</Text>
-                                <Text className={`emotion-text ${styleCss}`} >{emotionText}</Text>
-                            </Div>
-                        </Div>
-                    </Card>
-                </CardGrid>
-            </Group>
+                        </Card>
+                    </CardGrid>
+                </Group>
+            </Div>
+            
 
             <Spacing size={90} />
 
             <Text>
-                {
-                    
-                }
+                {/* {JSON.stringify(notes.map(note => note.thoughts_name === "Запись третья" && (
+                    setDate(note.date_value),
+                    setEmotionType(note.emotionType),
+                    setEmotions(note.emotions),
+                    setActions(note.action_name), 
+                    setIntensivityName(note.intensivity_name), 
+                    setEmotionText(note.thoughts_name)
+
+                )))} */}
+
+                {/* {notes.map(note => note.intensivity_name)} */}
+                {/* {best} */}
+                {/* {notes} */}
+                {/* {asd()} */}
             </Text>
-
-            {/* {asd} */}
-            {/* {JSON.stringify(_.sample(best))} */}
-
         </Panel>
     );
 }

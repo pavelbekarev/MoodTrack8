@@ -17,7 +17,7 @@ import frame22 from "../img/Frame22.svg";
 import frame23 from "../img/Frame23.svg";
 import frame24 from "../img/Frame24.svg";
 import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
-import { getSets } from "../actions/user";
+import { getUsers } from "../actions/user";
 import { useForm } from "react-hook-form";
 import { getNotes } from "../actions/note";
 
@@ -70,6 +70,10 @@ const FinishPage = () => {
     }
 
 
+    const getUserId = () => {
+        return useSelector(state => state.emotion.userId)
+    }
+
     const onSubmit = async () => {
         try {
             fetch("http://localhost:5000/api/note/createNote",
@@ -80,11 +84,12 @@ const FinishPage = () => {
                     },  
                     method: "POST", 
                     body: JSON.stringify({
+                        // user_id: getUserId(),
                         date_value: date, 
                         emotion_name: `${emotionType}`, 
                         emotions: `${emotions}`,
                         action_name: `${actions}`, 
-                        intensivity_name: `${emotionIntensivityList[sliderValue]}`, 
+                        intensivity_name: sliderValue, 
                         thoughts_name: `${emotionText}`
                     })
                 }

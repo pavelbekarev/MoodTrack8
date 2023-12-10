@@ -5,15 +5,12 @@ import {
     Text,
     Div,
     Banner,
-    Group,
-    Button,
     CellButton,
-    Link
 } from "@vkontakte/vkui";
+
 import React, {useState} from "react";
 import HeaderPanel from "../components/HeaderPanel";
 import "../css/ArticlePage.css"
-import { Icon24CheckCircleOn } from "@vkontakte/icons";
 import { useSelector } from "react-redux";
 import frame20 from "../img/Frame20.svg";
 import frame21 from "../img/Frame21.svg";
@@ -26,7 +23,7 @@ import { useRouteNavigator } from "@vkontakte/vk-mini-apps-router";
 import { useDispatch } from "react-redux";
 import { clearData } from "../store/setEmotion";
 import { useActiveVkuiLocation } from '@vkontakte/vk-mini-apps-router';
-import { Icon24ChevronCompactLeft } from "@vkontakte/icons";
+import { Icon24ChevronCompactLeft, Icon28ErrorCircleOutline, Icon24CheckCircleOn } from "@vkontakte/icons";
     
 
 const ArticlePage = () => {
@@ -90,31 +87,54 @@ const ArticlePage = () => {
     }
 
     useEffect(() => {
-        if (activePanel === "articlePage_panel") {
-            let a = setArticle(); 
-            let b = setArticle();
-            setShowSnackbar(true);
-
-            if (a.header !== b.header) {
-                setHeaderText(a.header); 
-                setSubtitle(a.subtitle);
-                setArticleUrl(a.url);
-
-                setHeaderText2(b.header); 
-                setSubtitle2(b.subtitle);
-                setArticleUrl2(b.url);
-            }
-
-            else {
-                setHeaderText(a.header); 
-                setSubtitle(a.subtitle);
-                setArticleUrl(a.url);
-
-                setHeaderText2(setArticle().header); 
-                setSubtitle2(setArticle().subtitle);
-                setArticleUrl2(setArticle().url);
+        try {
+            if (activePanel === "articlePage_panel") {
+                let a = setArticle(); 
+                let b = setArticle();
+                setShowSnackbar(true);
+    
+                setSnackbar(
+                    <Snackbar
+                        className="snackBar"
+                        before={<Icon24CheckCircleOn fill="blue"/>}
+                    >
+                        Запись сохранена
+                    </Snackbar>
+                )
+    
+                if (a.header !== b.header) {
+                    setHeaderText(a.header); 
+                    setSubtitle(a.subtitle);
+                    setArticleUrl(a.url);
+    
+                    setHeaderText2(b.header); 
+                    setSubtitle2(b.subtitle);
+                    setArticleUrl2(b.url);
+                }
+    
+                else {
+                    setHeaderText(a.header); 
+                    setSubtitle(a.subtitle);
+                    setArticleUrl(a.url);
+    
+                    setHeaderText2(setArticle().header); 
+                    setSubtitle2(setArticle().subtitle);
+                    setArticleUrl2(setArticle().url);
+                }
             }
         }
+
+        catch (e) {
+            setSnackbar(
+                <Snackbar
+                    onClose={() => setSnackbar(null)}
+                    before={<Icon28ErrorCircleOutline fill="var(--vkui--color_icon_negative)" />}
+                >
+                    Не удалось сохранить изменения
+                </Snackbar>
+            );
+        }
+        
     }, [activePanel])
 
 
@@ -122,9 +142,7 @@ const ArticlePage = () => {
         <Panel>
             {
                 showSnackbar && 
-                <Snackbar className="snackBar">
-                    Запись сохранена
-                </Snackbar>
+                snackbar
             }
             
             <HeaderPanel />

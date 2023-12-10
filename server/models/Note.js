@@ -1,6 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const Note = new Schema({
+    // user_id: { type: Number, required: true },
     date_value: { type: String, required: true },
     emotion_name: { type: String, required: true },
     emotions: [{ type: String, required: true }],

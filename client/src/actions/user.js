@@ -1,6 +1,6 @@
 import { setUsers } from "../store/setEmotion";
 
-function getSets() {
+function getUsers() {
     return async dispatch => {
         try {
             await fetch("http://localhost:5000/api/user/getUsers")
@@ -15,4 +15,4 @@ function getSets() {
 }
 
 
-export { getSets };
+export { getUsers };
